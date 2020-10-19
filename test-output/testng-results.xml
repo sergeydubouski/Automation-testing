@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="CheckboxesPageTestSuite" duration-ms="7331" started-at="2020-10-18T14:00:41 EDT" finished-at="2020-10-18T14:00:48 EDT">
+    <groups>
+    </groups>
+    <test name="CheckboxesPageTestPageTest-CH" duration-ms="6177" started-at="2020-10-18T14:00:41 EDT" finished-at="2020-10-18T14:00:47 EDT">
+      <class name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@2a17b7b6]" name="setUpDriver" is-config="true" duration-ms="4001" started-at="2020-10-18T14:00:41 EDT" finished-at="2020-10-18T14:00:45 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@64f6106c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpDriver -->
+        <test-method status="PASS" signature="selectingTwoCheckboxesTest()[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@2a17b7b6]" name="selectingTwoCheckboxesTest" duration-ms="1530" started-at="2020-10-18T14:00:45 EDT" finished-at="2020-10-18T14:00:46 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectingTwoCheckboxesTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@2a17b7b6]" name="tearDown" is-config="true" duration-ms="617" started-at="2020-10-18T14:00:46 EDT" finished-at="2020-10-18T14:00:47 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest -->
+    </test> <!-- CheckboxesPageTestPageTest-CH -->
+    <test name="PositiveLoginPageTest-FF" duration-ms="7331" started-at="2020-10-18T14:00:41 EDT" finished-at="2020-10-18T14:00:48 EDT">
+      <class name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@e320068]" name="setUpDriver" is-config="true" duration-ms="4631" started-at="2020-10-18T14:00:41 EDT" finished-at="2020-10-18T14:00:45 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@33723e30]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpDriver -->
+        <test-method status="PASS" signature="selectingTwoCheckboxesTest()[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@e320068]" name="selectingTwoCheckboxesTest" duration-ms="2034" started-at="2020-10-18T14:00:45 EDT" finished-at="2020-10-18T14:00:47 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectingTwoCheckboxesTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@e320068]" name="tearDown" is-config="true" duration-ms="657" started-at="2020-10-18T14:00:47 EDT" finished-at="2020-10-18T14:00:48 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest -->
+    </test> <!-- PositiveLoginPageTest-FF -->
+  </suite> <!-- CheckboxesPageTestSuite -->
+</testng-results>
