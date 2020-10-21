@@ -3,7 +3,7 @@ package com.herokuapp.theinternet.pages;
 import java.util.List;
 
 import org.apache.logging.log4j.Logger;
-
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * class BasePageObject.
+ * 
  * @author SD
  * @version 1.0
  * @since 17.10.2020
@@ -28,38 +29,66 @@ public class BasePageObject {
 		this.log = log;
 	}
 
-	// open a web page
+	/** open a web page */
 	void open(String url) {
 		this.driver.get(url);
 	}
 
-	// find a web element using By locator
+	/** find a web element using By locator */
 	WebElement find(By by) {
 		return this.driver.findElement(by);
 	}
-	// find all web elements using By locator
+
+	/** find all web elements using By locator */
 	List<WebElement> findAll(By by) {
 		return this.driver.findElements(by);
 	}
 
-	// click on a web element
+	/** click on a web element */
 	void click(By by) {
 		this.waitForVisibility(by, 5);
 		this.find(by).click();
 	}
+	
+	/**get text of a web element*/
+	String getText(By locator) {
+		return this.find(locator).getText();
+	} 
 
-	// send keys to a web element
+	/** send keys to a web element */
 	void type(By by, String keysToSend) {
 		this.waitForVisibility(by, 5);
 		this.find(by).sendKeys(keysToSend);
 	}
 
-	// Get current url
+	/** get current ur */
 	public String getCurrentUrl() {
 		return this.driver.getCurrentUrl();
 	}
 
-//wait for visibility of a web element
+	/** accept alert */
+	protected void acceptAlert() {
+		this.driver.switchTo().alert().accept();
+
+	}
+
+	/** dismiss alert */
+	protected void dismissAlert() {
+		this.driver.switchTo().alert().dismiss();
+
+	}
+	
+	/**get text from alert*/
+	String getTextFromAlert() {
+		return this.driver.switchTo().alert().getText();
+	}
+
+	/** send keys to alert */
+	protected void typeTextToAlert(String text) {
+		this.driver.switchTo().alert().sendKeys(text);
+	}
+
+	/** wait for visibility of a web element */
 	public void waitForVisibility(By locator, Integer... timeInSec) {
 		int attempt = 0;
 		while (attempt < 2) {
