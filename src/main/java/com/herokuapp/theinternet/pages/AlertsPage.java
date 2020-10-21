@@ -24,6 +24,7 @@ public class AlertsPage extends BasePageObject {
 
 	/** accept JS Alert */
 	public void acceptJsAlert() {
+		this.log.info("Open JS Alert.");
 		this.click(this.jsAlertButtonLocator);
 		this.acceptAlert();
 	}
@@ -36,6 +37,7 @@ public class AlertsPage extends BasePageObject {
 
 	/** accept JS Confirm alert */
 	public void acceptJsConfirmAlert() {
+		this.log.info("Open JS Confirm.");
 		this.click(this.jsConfirmButtonLocator);
 		this.acceptAlert();
 	}
@@ -48,6 +50,8 @@ public class AlertsPage extends BasePageObject {
 
 	/** type text to JS Prompt alert */
 	public void typeToJsPrompt(String text) {
+		this.log.info("Open JS Prompt.");
+		this.click(this.jsPromptButtonLocator);
 		this.typeTextToAlert(text);
 	}
 
