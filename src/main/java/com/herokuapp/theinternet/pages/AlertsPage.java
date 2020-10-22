@@ -15,49 +15,33 @@ public class AlertsPage extends BasePageObject {
 
 	private By jsAlertButtonLocator = By.linkText("Click for JS Alert");
 	private By jsConfirmButtonLocator = By.linkText("Click for JS Confirm");
-	private By jsPromptButtonLocator = By.linkText("Click for JS Prompt");
+	private By jsPromptButtonLocator = By.xpath("//button[text()='Click for JS Alert']");
 	private By resultLocator = By.id("result");
 
 	public AlertsPage(WebDriver driver, Logger log) {
 		super(driver, log);
 	}
+	
+	/** accept alert */
+	protected void acceptAlert() {
+		this.driver.switchTo().alert().accept();
 
-	/** accept JS Alert */
-	public void acceptJsAlert() {
-		this.log.info("Open JS Alert.");
-		this.click(this.jsAlertButtonLocator);
-		this.acceptAlert();
 	}
 
-	/** get text from JS Alert */
-	public String getTextFromJsAlert() {
-		this.click(this.jsAlertButtonLocator);
-		return this.getTextFromAlert();
+	/** dismiss alert */
+	protected void dismissAlert() {
+		this.driver.switchTo().alert().dismiss();
+
+	}
+	
+	/**get text from alert*/
+	String getTextFromAlert() {
+		return this.driver.switchTo().alert().getText();
 	}
 
-	/** accept JS Confirm alert */
-	public void acceptJsConfirmAlert() {
-		this.log.info("Open JS Confirm.");
-		this.click(this.jsConfirmButtonLocator);
-		this.acceptAlert();
+	/** send keys to alert */
+	protected void typeTextToAlert(String text) {
+		this.driver.switchTo().alert().sendKeys(text);
 	}
-
-	/** dismiss JS Confirm alert */
-	public void dismissJsConfirmAlert() {
-		this.click(this.jsConfirmButtonLocator);
-		this.dismissAlert();
-	}
-
-	/** type text to JS Prompt alert */
-	public void typeToJsPrompt(String text) {
-		this.log.info("Open JS Prompt.");
-		this.click(this.jsPromptButtonLocator);
-		this.typeTextToAlert(text);
-	}
-
-	/** get result text */
-	public String getResult() {
-		return this.getText(this.resultLocator);
-	}
-
+	
 }

@@ -66,27 +66,6 @@ public class BasePageObject {
 		return this.driver.getCurrentUrl();
 	}
 
-	/** accept alert */
-	protected void acceptAlert() {
-		this.driver.switchTo().alert().accept();
-
-	}
-
-	/** dismiss alert */
-	protected void dismissAlert() {
-		this.driver.switchTo().alert().dismiss();
-
-	}
-	
-	/**get text from alert*/
-	String getTextFromAlert() {
-		return this.driver.switchTo().alert().getText();
-	}
-
-	/** send keys to alert */
-	protected void typeTextToAlert(String text) {
-		this.driver.switchTo().alert().sendKeys(text);
-	}
 
 	/** wait for visibility of a web element */
 	public void waitForVisibility(By locator, Integer... timeInSec) {
