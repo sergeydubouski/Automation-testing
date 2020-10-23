@@ -13,8 +13,8 @@ import org.openqa.selenium.WebDriver;
  */
 public class AlertsPage extends BasePageObject {
 
-	private By jsAlertButtonLocator = By.linkText("Click for JS Alert");
-	private By jsConfirmButtonLocator = By.linkText("Click for JS Confirm");
+	private By jsAlertButtonLocator = By.xpath("//button[text()='Click for JS Alert']");
+	private By jsConfirmButtonLocator = By.xpath("//button[text()='Click for JS Confirm']");
 	private By jsPromptButtonLocator = By.xpath("//button[text()='Click for JS Alert']");
 	private By resultLocator = By.id("result");
 
@@ -43,5 +43,15 @@ public class AlertsPage extends BasePageObject {
 	protected void typeTextToAlert(String text) {
 		this.driver.switchTo().alert().sendKeys(text);
 	}
+	
+	/**get a text of the result field*/
+	public String getTextFromResultField() {
+		return null;
+	}
+	/**get text of JS Alert and accept*/
+	/**cancel JS Confirm Alert*/
+	/**Type text to JS Prompt Alert*/
+	
+	
 	
 }
