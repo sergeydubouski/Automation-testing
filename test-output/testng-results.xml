@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="SmokeTestSuite" duration-ms="12053" started-at="2020-10-20T05:31:52 EDT" finished-at="2020-10-20T05:32:04 EDT">
+  <suite name="AlertsPageTestSuite" duration-ms="7179" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:57 EDT">
     <groups>
     </groups>
-    <test name="CheckboxesPageTest-CH" duration-ms="8713" started-at="2020-10-20T05:31:52 EDT" finished-at="2020-10-20T05:32:01 EDT">
-      <class name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest">
-        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@76f2b07d]" name="setUpDriver" is-config="true" duration-ms="3744" started-at="2020-10-20T05:31:52 EDT" finished-at="2020-10-20T05:31:56 EDT">
+    <test name="AlertsPageTestSuite-CH" duration-ms="6276" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:56 EDT">
+      <class name="com.heroku.theinternet.alerts.AlertsPageTest">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@2a17b7b6]" name="setUpDriver" is-config="true" duration-ms="4150" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:54 EDT">
           <params>
             <param index="0">
               <value>
@@ -16,71 +16,33 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@42d8062c]]>
+                <![CDATA[org.testng.TestRunner@64f6106c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpDriver -->
-        <test-method status="PASS" signature="selectingTwoCheckboxesTest()[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@76f2b07d]" name="selectingTwoCheckboxesTest" duration-ms="4161" started-at="2020-10-20T05:31:56 EDT" finished-at="2020-10-20T05:32:00 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectingTwoCheckboxesTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@76f2b07d]" name="tearDown" is-config="true" duration-ms="766" started-at="2020-10-20T05:32:00 EDT" finished-at="2020-10-20T05:32:01 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest -->
-    </test> <!-- CheckboxesPageTest-CH -->
-    <test name="PositiveLoginPageTest-CH" duration-ms="10329" started-at="2020-10-20T05:31:52 EDT" finished-at="2020-10-20T05:32:02 EDT">
-      <class name="com.heroku.theinternet.loginpagetests.PositiveLoginPageTest">
-        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.loginpagetests.PositiveLoginPageTest@5a8806ef]" name="setUpDriver" is-config="true" duration-ms="3651" started-at="2020-10-20T05:31:52 EDT" finished-at="2020-10-20T05:31:56 EDT">
+        <test-method status="PASS" signature="testAlerts(java.lang.String)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@2a17b7b6]" name="testAlerts" duration-ms="1441" started-at="2020-10-25T18:05:54 EDT" finished-at="2020-10-25T18:05:55 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@6043cd28]]>
+                <![CDATA[Test+*/-\@]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpDriver -->
-        <test-method status="PASS" signature="loginTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.heroku.theinternet.loginpagetests.PositiveLoginPageTest@5a8806ef]" name="loginTest" duration-ms="5765" started-at="2020-10-20T05:31:56 EDT" finished-at="2020-10-20T05:32:01 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[tomsmith]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SuperSecretPassword!]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[You logged into a secure area!]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.loginpagetests.PositiveLoginPageTest@5a8806ef]" name="tearDown" is-config="true" duration-ms="850" started-at="2020-10-20T05:32:01 EDT" finished-at="2020-10-20T05:32:02 EDT">
+        </test-method> <!-- testAlerts -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@2a17b7b6]" name="tearDown" is-config="true" duration-ms="638" started-at="2020-10-25T18:05:55 EDT" finished-at="2020-10-25T18:05:56 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.heroku.theinternet.loginpagetests.PositiveLoginPageTest -->
-    </test> <!-- PositiveLoginPageTest-CH -->
-    <test name="CheckboxesPageTest-FF" duration-ms="11811" started-at="2020-10-20T05:31:52 EDT" finished-at="2020-10-20T05:32:04 EDT">
-      <class name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest">
-        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@1877ab81]" name="setUpDriver" is-config="true" duration-ms="7239" started-at="2020-10-20T05:31:52 EDT" finished-at="2020-10-20T05:31:59 EDT">
+      </class> <!-- com.heroku.theinternet.alerts.AlertsPageTest -->
+    </test> <!-- AlertsPageTestSuite-CH -->
+    <test name="AlertsPageTestSuite-FF" duration-ms="7179" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:57 EDT">
+      <class name="com.heroku.theinternet.alerts.AlertsPageTest">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@e320068]" name="setUpDriver" is-config="true" duration-ms="4717" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:54 EDT">
           <params>
             <param index="0">
               <value>
@@ -89,67 +51,29 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@cb51256]]>
+                <![CDATA[org.testng.TestRunner@33723e30]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpDriver -->
-        <test-method status="PASS" signature="selectingTwoCheckboxesTest()[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@1877ab81]" name="selectingTwoCheckboxesTest" duration-ms="3262" started-at="2020-10-20T05:31:59 EDT" finished-at="2020-10-20T05:32:02 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectingTwoCheckboxesTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest@1877ab81]" name="tearDown" is-config="true" duration-ms="1299" started-at="2020-10-20T05:32:02 EDT" finished-at="2020-10-20T05:32:04 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest -->
-    </test> <!-- CheckboxesPageTest-FF -->
-    <test name="PositiveLoginPageTest-FF" duration-ms="12053" started-at="2020-10-20T05:31:52 EDT" finished-at="2020-10-20T05:32:04 EDT">
-      <class name="com.heroku.theinternet.loginpagetests.PositiveLoginPageTest">
-        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.loginpagetests.PositiveLoginPageTest@27a8c74e]" name="setUpDriver" is-config="true" duration-ms="8333" started-at="2020-10-20T05:31:52 EDT" finished-at="2020-10-20T05:32:00 EDT">
+        <test-method status="PASS" signature="testAlerts(java.lang.String)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@e320068]" name="testAlerts" duration-ms="1637" started-at="2020-10-25T18:05:54 EDT" finished-at="2020-10-25T18:05:56 EDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@59906517]]>
+                <![CDATA[100000000\s%]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpDriver -->
-        <test-method status="PASS" signature="loginTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.heroku.theinternet.loginpagetests.PositiveLoginPageTest@27a8c74e]" name="loginTest" duration-ms="2785" started-at="2020-10-20T05:32:00 EDT" finished-at="2020-10-20T05:32:03 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[tomsmith]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SuperSecretPassword!]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[You logged into a secure area!]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.loginpagetests.PositiveLoginPageTest@27a8c74e]" name="tearDown" is-config="true" duration-ms="901" started-at="2020-10-20T05:32:03 EDT" finished-at="2020-10-20T05:32:04 EDT">
+        </test-method> <!-- testAlerts -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@e320068]" name="tearDown" is-config="true" duration-ms="818" started-at="2020-10-25T18:05:56 EDT" finished-at="2020-10-25T18:05:57 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.heroku.theinternet.loginpagetests.PositiveLoginPageTest -->
-    </test> <!-- PositiveLoginPageTest-FF -->
-  </suite> <!-- SmokeTestSuite -->
+      </class> <!-- com.heroku.theinternet.alerts.AlertsPageTest -->
+    </test> <!-- AlertsPageTestSuite-FF -->
+  </suite> <!-- AlertsPageTestSuite -->
 </testng-results>

@@ -34,7 +34,7 @@ public class BaseTest {
 		this.driver=new BrowserFactory(this.browser,this.log).createDriver();
 	}
 	
-	@AfterTest(alwaysRun=true)
+@AfterTest(alwaysRun=true)
 	protected void tearDown() {
 		this.log.info("Close browser\s"+this.browser+".");
 		this.driver.quit();
