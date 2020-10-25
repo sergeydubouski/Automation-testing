@@ -1,6 +1,7 @@
 package com.herokuapp.theinternet.pages;
 
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -9,49 +10,40 @@ import org.openqa.selenium.WebDriver;
  * 
  * @author SD
  * @verision 1.0
- * @since 20-10-2020
+ * @since 20.10.2020
  */
 public class AlertsPage extends BasePageObject {
 
 	private By jsAlertButtonLocator = By.xpath("//button[text()='Click for JS Alert']");
 	private By jsConfirmButtonLocator = By.xpath("//button[text()='Click for JS Confirm']");
-	private By jsPromptButtonLocator = By.xpath("//button[text()='Click for JS Alert']");
-	private By resultLocator = By.id("result");
+	private By jsPromptButtonLocator = By.xpath("//button[text()='Click for JS Prompt']");
+	private By resultFieldLocator = By.id("result");
 
 	public AlertsPage(WebDriver driver, Logger log) {
 		super(driver, log);
 	}
 	
-	/** accept alert */
-	protected void acceptAlert() {
+	/**accept Alert*/
+	public void acceptAlert() {
 		this.driver.switchTo().alert().accept();
-
 	}
-
-	/** dismiss alert */
-	protected void dismissAlert() {
-		this.driver.switchTo().alert().dismiss();
-
-	}
-	
-	/**get text from alert*/
-	String getTextFromAlert() {
-		return this.driver.switchTo().alert().getText();
-	}
-
-	/** send keys to alert */
-	protected void typeTextToAlert(String text) {
-		this.driver.switchTo().alert().sendKeys(text);
-	}
-	
-	/**get a text of the result field*/
-	public String getTextFromResultField() {
-		return null;
-	}
-	/**get text of JS Alert and accept*/
 	/**cancel JS Confirm Alert*/
+	public void cancelJsConfirmAlert() {
+		this.click(jsConfirmButtonLocator);
+		this.driver.switchTo().alert().dismiss();
+	}
 	/**Type text to JS Prompt Alert*/
-	
-	
+	public void typeToJsPromptAlert(String text) {
+		this.click(jsPromptButtonLocator);
+		Alert alert=this.driver.switchTo().alert();
+		this.log.info("Opened JavaScript Prompt alert.");
+		alert.sendKeys(text);
+	}
+	/**get text from Result field*/
+	public String getTextFromResultField() {
+		this.waitForVisibility(resultFieldLocator, 5);
+		this.log.info("Looking for outer text in the Result element.");
+		return this.find(resultFieldLocator).getAttribute("innerText");
+	}
 	
 }
