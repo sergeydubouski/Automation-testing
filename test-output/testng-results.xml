@@ -2,51 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="AlertsPageTestSuite" duration-ms="7179" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:57 EDT">
+  <suite name="AlertsPageTestSuite" duration-ms="6499" started-at="2020-10-26T20:33:26 EDT" finished-at="2020-10-26T20:33:33 EDT">
     <groups>
     </groups>
-    <test name="AlertsPageTestSuite-CH" duration-ms="6276" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:56 EDT">
+    <test name="AlertsPageTestSuite-CH" duration-ms="6185" started-at="2020-10-26T20:33:26 EDT" finished-at="2020-10-26T20:33:33 EDT">
       <class name="com.heroku.theinternet.alerts.AlertsPageTest">
-        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@2a17b7b6]" name="setUpDriver" is-config="true" duration-ms="4150" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:54 EDT">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@2a17b7b6]" name="setUpDriver" is-config="true" duration-ms="4155" started-at="2020-10-26T20:33:26 EDT" finished-at="2020-10-26T20:33:31 EDT">
           <params>
             <param index="0">
               <value>
                 <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@64f6106c]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpDriver -->
-        <test-method status="PASS" signature="testAlerts(java.lang.String)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@2a17b7b6]" name="testAlerts" duration-ms="1441" started-at="2020-10-25T18:05:54 EDT" finished-at="2020-10-25T18:05:55 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Test+*/-\@]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAlerts -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@2a17b7b6]" name="tearDown" is-config="true" duration-ms="638" started-at="2020-10-25T18:05:55 EDT" finished-at="2020-10-25T18:05:56 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.heroku.theinternet.alerts.AlertsPageTest -->
-    </test> <!-- AlertsPageTestSuite-CH -->
-    <test name="AlertsPageTestSuite-FF" duration-ms="7179" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:57 EDT">
-      <class name="com.heroku.theinternet.alerts.AlertsPageTest">
-        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@e320068]" name="setUpDriver" is-config="true" duration-ms="4717" started-at="2020-10-25T18:05:50 EDT" finished-at="2020-10-25T18:05:54 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
               </value>
             </param>
             <param index="1">
@@ -58,7 +23,42 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpDriver -->
-        <test-method status="PASS" signature="testAlerts(java.lang.String)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@e320068]" name="testAlerts" duration-ms="1637" started-at="2020-10-25T18:05:54 EDT" finished-at="2020-10-25T18:05:56 EDT">
+        <test-method status="PASS" signature="testAlerts(java.lang.String)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@2a17b7b6]" name="testAlerts" duration-ms="1376" started-at="2020-10-26T20:33:31 EDT" finished-at="2020-10-26T20:33:32 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test+*/-\@]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAlerts -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@2a17b7b6]" name="tearDown" is-config="true" duration-ms="618" started-at="2020-10-26T20:33:32 EDT" finished-at="2020-10-26T20:33:33 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.heroku.theinternet.alerts.AlertsPageTest -->
+    </test> <!-- AlertsPageTestSuite-CH -->
+    <test name="AlertsPageTestSuite-FF" duration-ms="6499" started-at="2020-10-26T20:33:26 EDT" finished-at="2020-10-26T20:33:33 EDT">
+      <class name="com.heroku.theinternet.alerts.AlertsPageTest">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@e320068]" name="setUpDriver" is-config="true" duration-ms="4265" started-at="2020-10-26T20:33:26 EDT" finished-at="2020-10-26T20:33:31 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@64f6106c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpDriver -->
+        <test-method status="PASS" signature="testAlerts(java.lang.String)[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@e320068]" name="testAlerts" duration-ms="1582" started-at="2020-10-26T20:33:31 EDT" finished-at="2020-10-26T20:33:32 EDT">
           <params>
             <param index="0">
               <value>
@@ -69,7 +69,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAlerts -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@e320068]" name="tearDown" is-config="true" duration-ms="818" started-at="2020-10-25T18:05:56 EDT" finished-at="2020-10-25T18:05:57 EDT">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.heroku.theinternet.alerts.AlertsPageTest@e320068]" name="tearDown" is-config="true" duration-ms="645" started-at="2020-10-26T20:33:32 EDT" finished-at="2020-10-26T20:33:33 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
