@@ -65,6 +65,18 @@ public class BasePageObject {
 	public String getCurrentUrl() {
 		return this.driver.getCurrentUrl();
 	}
+	/**accept Alert*/
+	public void acceptAlert() {
+		WebDriverWait wait=new WebDriverWait(this.driver, 5);
+		wait.until(ExpectedConditions.alertIsPresent());
+		this.driver.switchTo().alert().accept();
+	}
+	/**dismiss Alert*/
+	public void dismissAlert() {
+		WebDriverWait wait=new WebDriverWait(this.driver, 5);
+		wait.until(ExpectedConditions.alertIsPresent());
+		this.driver.switchTo().alert().dismiss();
+	}
 
 
 	/** wait for visibility of a web element */

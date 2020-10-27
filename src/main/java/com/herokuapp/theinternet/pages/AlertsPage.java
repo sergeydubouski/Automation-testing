@@ -4,6 +4,8 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * class AlertsPage
@@ -21,16 +23,11 @@ public class AlertsPage extends BasePageObject {
 
 	public AlertsPage(WebDriver driver, Logger log) {
 		super(driver, log);
-	}
-	
-	/**accept Alert*/
-	public void acceptAlert() {
-		this.driver.switchTo().alert().accept();
-	}
+	}	
 	/**cancel JS Confirm Alert*/
 	public void cancelJsConfirmAlert() {
 		this.click(jsConfirmButtonLocator);
-		this.driver.switchTo().alert().dismiss();
+		this.dismissAlert();
 	}
 	/**Type text to JS Prompt Alert*/
 	public void typeToJsPromptAlert(String text) {
