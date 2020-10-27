@@ -22,11 +22,14 @@ public class MultipleWindowsPage extends BasePageObject {
 		super(driver, log);
 	}
 	
-	/**Open a second window by clicking Click Here link*/
+	/**Open a new window by clicking Click Here link*/
 	public void openSecondWindow() {
 		this.click(this.clickHereLinkLocator);
 	}
-	
+	/**Get a title of a new window*/
+	public String getTitle() {
+		return null;
+	}
 	
 
 }
