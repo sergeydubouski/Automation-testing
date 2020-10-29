@@ -33,7 +33,7 @@ public class AlertsPageTest extends TestUtil {
 		// Verification
 		// Verify is Result text field displays a text sent to JavaScript Promt Alert
 		Assert.assertTrue(alertsPage.getTextFromResultField().contains(message),
-				"JavaSscript Prompt alert message doesnot match to the Result text!");
+				"JavaSscript Prompt alert message doesn't match to the Result text!");
 	}
 
 }

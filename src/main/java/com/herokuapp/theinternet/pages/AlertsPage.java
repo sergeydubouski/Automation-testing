@@ -27,11 +27,15 @@ public class AlertsPage extends BasePageObject {
 	/**cancel JS Confirm Alert*/
 	public void cancelJsConfirmAlert() {
 		this.click(jsConfirmButtonLocator);
+		this.waitForAlertToBePresent(this.driver, 5);
+		Alert alert=this.driver.switchTo().alert();
+		this.log.info("Opened JavaScript Confirmed alert.");
 		this.dismissAlert();
 	}
 	/**Type text to JS Prompt Alert*/
 	public void typeToJsPromptAlert(String text) {
 		this.click(jsPromptButtonLocator);
+		this.waitForAlertToBePresent(this.driver, 5);
 		Alert alert=this.driver.switchTo().alert();
 		this.log.info("Opened JavaScript Prompt alert.");
 		alert.sendKeys(text);
