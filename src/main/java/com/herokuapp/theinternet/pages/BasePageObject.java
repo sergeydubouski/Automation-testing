@@ -1,6 +1,8 @@
 package com.herokuapp.theinternet.pages;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
@@ -76,6 +78,24 @@ public class BasePageObject {
 		WebDriverWait wait=new WebDriverWait(this.driver, 5);
 		wait.until(ExpectedConditions.alertIsPresent());
 		this.driver.switchTo().alert().dismiss();
+	}
+	
+	/**wait for alert to be present*/
+	public void waitForAlertToBePresent(WebDriver driver, Integer...timeInSec) {
+		WebDriverWait wait=new WebDriverWait(driver, (timeInSec !=null?timeInSec[0]:30));
+		wait.until(ExpectedConditions.alertIsPresent());
+	}
+	
+	/**switch to a new page using its title*/
+	public void switchToWindow(String title) {
+		Set<String> windowHandlers=this.driver.getWindowHandles();
+		Iterator iterator=windowHandlers.iterator();
+		while(iterator.hasNext()) {
+			driver.switchTo().window(iterator.next().toString().toLowerCase());
+			if(driver.getTitle().toLowerCase().contains(title.toLowerCase())) {
+				break;
+			}
+		}
 	}
 
 
