@@ -15,7 +15,7 @@ public class WindowsPage extends BasePageObject {
 	public String getTitleOfNewPage() {
 		
 		this.click(this.clickHereButtonLocator);
-		
-		return title;
+		this.switchToWindow("The Internet");		
+		return this.driver.getTitle();
 	}
 }

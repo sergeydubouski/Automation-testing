@@ -88,6 +88,7 @@ public class BasePageObject {
 	
 	/**switch to a new page using its title*/
 	public void switchToWindow(String title) {
+		this.log.info("Switching to a window with title:\s"+title);
 		Set<String> windowHandlers=this.driver.getWindowHandles();
 		Iterator iterator=windowHandlers.iterator();
 		while(iterator.hasNext()) {
