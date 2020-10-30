@@ -4,32 +4,24 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.herokuapp.theinternet.base.TestUtil;
-
-
 /**
- * class MultipleWindowsPage
+ * class MultipleWindowsPage.
  * 
  * @author SD
- * @verision 1.0
- * @since 26.10.2020
+ * @version 1.0
+ * @since 30.10.2020
  */
 public class MultipleWindowsPage extends BasePageObject {
 	
-	private By clickHereLinkLocator=By.xpath("//*[text()='Click Here']");
+	private By clickHereButtonLocator=By.xpath("//*[text()='Click Here']");
 
 	public MultipleWindowsPage(WebDriver driver, Logger log) {
 		super(driver, log);
+		// TODO Auto-generated constructor stub
 	}
-	
-	/**Open a new window by clicking Click Here link*/
-	public void openSecondWindow() {
-		this.click(this.clickHereLinkLocator);
+	public String getTitleOfNewPage() {		
+		this.click(this.clickHereButtonLocator);
+		this.switchToWindow("The Internet");		
+		return this.driver.getTitle();
 	}
-	/**Get a title of a new window*/
-	public String getTitle() {
-		return null;
-	}
-	
-
 }
