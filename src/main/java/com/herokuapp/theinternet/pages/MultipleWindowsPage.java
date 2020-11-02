@@ -19,9 +19,11 @@ public class MultipleWindowsPage extends BasePageObject {
 		super(driver, log);
 		// TODO Auto-generated constructor stub
 	}
-	public String getTitleOfNewPage() {		
+	/**Switch to a window with a given title and return the title*/
+	public String getTitleOfNewWindow(String title) {		
 		this.click(this.clickHereButtonLocator);
-		this.switchToWindow("The Internet");		
-		return this.driver.getTitle();
+		this.switchToWindow(title);
+		this.log.info("Current window title:\s"+this.driver.getTitle());
+		return this.driver.getTitle().toLowerCase();
 	}
 }

@@ -51,11 +51,11 @@ public class BasePageObject {
 		this.waitForVisibility(by, 5);
 		this.find(by).click();
 	}
-	
-	/**get text of a web element*/
+
+	/** get text of a web element */
 	String getText(By locator) {
 		return this.find(locator).getText();
-	} 
+	}
 
 	/** send keys to a web element */
 	void type(By by, String keysToSend) {
@@ -67,38 +67,41 @@ public class BasePageObject {
 	public String getCurrentUrl() {
 		return this.driver.getCurrentUrl();
 	}
-	/**accept Alert*/
+
+	/** accept Alert */
 	public void acceptAlert() {
-		WebDriverWait wait=new WebDriverWait(this.driver, 5);
+		WebDriverWait wait = new WebDriverWait(this.driver, 5);
 		wait.until(ExpectedConditions.alertIsPresent());
 		this.driver.switchTo().alert().accept();
 	}
-	/**dismiss Alert*/
-	public void dismissAlert() {
-		WebDriverWait wait=new WebDriverWait(this.driver, 5);
+
+	/** dismiss Alert */
+	void dismissAlert() {
+		WebDriverWait wait = new WebDriverWait(this.driver, 5);
 		wait.until(ExpectedConditions.alertIsPresent());
 		this.driver.switchTo().alert().dismiss();
 	}
-	
-	/**wait for alert to be present*/
-	public void waitForAlertToBePresent(WebDriver driver, Integer...timeInSec) {
-		WebDriverWait wait=new WebDriverWait(driver, (timeInSec !=null?timeInSec[0]:30));
-		wait.until(ExpectedConditions.alertIsPresent());
-	}
-	
-	/**switch to a new page using its title*/
-	public void switchToWindow(String title) {
-		this.log.info("Switching to a window with title:\s"+title);
-		Set<String> windowHandlers=this.driver.getWindowHandles();
-		Iterator iterator=windowHandlers.iterator();
-		while(iterator.hasNext()) {
-			driver.switchTo().window(iterator.next().toString().toLowerCase());
-			if(driver.getTitle().toLowerCase().contains(title.toLowerCase())) {
+
+	/** switch to a new page using its title */
+	void switchToWindow(String title) {
+		this.log.info("Switching to a window with title:\s" + title);
+		Set<String> windowHandlers = this.driver.getWindowHandles();
+		Iterator<String> iterator = windowHandlers.iterator();
+		while (iterator.hasNext()) {
+			driver.switchTo().window(iterator.next().toString());
+			WebDriverWait wait = new WebDriverWait(this.driver, 5);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html")));
+			if (driver.getTitle().toLowerCase().contains(title.toLowerCase())) {
 				break;
 			}
 		}
 	}
 
+	/** wait for alert to be present */
+	public void waitForAlertToBePresent(WebDriver driver, Integer... timeInSec) {
+		WebDriverWait wait = new WebDriverWait(driver, (timeInSec != null ? timeInSec[0] : 30));
+		wait.until(ExpectedConditions.alertIsPresent());
+	}
 
 	/** wait for visibility of a web element */
 	public void waitForVisibility(By locator, Integer... timeInSec) {

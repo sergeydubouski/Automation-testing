@@ -1,23 +1,23 @@
 <!-- <?xml version="1.0" encoding="UTF-8"?> -->
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="MultipleWindowsPageTestSuite" verbose="1" parallel="tests"
-	thread-count="3">
-	<test name="MultipleWindowsPageTestSuite-CH1">
+<suite name="MultipleWindowsPageTestSuite" verbose="1"
+	parallel="tests" thread-count="3">
+	<test name="MultipleWindowsPageTestSuite-CH">
 		<parameter name="browser" value="chrome" />
+		<parameter name="title" value="New Window" />
+		<!-- <parameter name="title" value="the internet" /> -->
 		<classes>
-			<class name="com.heroku.theinternet.windows.MultipleWindowsPageTest" />
+			<class
+				name="com.heroku.theinternet.windows.MultipleWindowsPageTest" />
 		</classes>
 	</test>
 	<test name="MultipleWindowsPageTestSuite-FF">
 		<parameter name="browser" value="firefox" />
+		<parameter name="title" value="the internet" />
+		<!-- <parameter name="title" value="new window" /> -->
 		<classes>
-			<class name="com.heroku.theinternet.windows.MultipleWindowsPageTest" />
-		</classes>
-	</test>
-		<test name="MultipleWindowsPageTestSuite-CH2">
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="com.heroku.theinternet.windows.MultipleWindowsPageTest" />
+			<class
+				name="com.heroku.theinternet.windows.MultipleWindowsPageTest" />
 		</classes>
 	</test>
 </suite>

@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-MultipleWindowsPageTestSuite">
-              <span class="suite-name border-failed">MultipleWindowsPageTestSuite</span>
+              <span class="suite-name border-passed">MultipleWindowsPageTestSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,12 +51,12 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-MultipleWindowsPageTestSuite">
-                    <span>D:\Books\eclipse-workspace\Automation-testing\src\test\resources\TestSuites\SeparateTestSuites\MultipleWindowsPageTestSuite.xml</span>
+                    <span>C:\Users\serge\eclipse-workspace\Automation-testing\src\test\resources\TestSuites\SeparateTestSuites\MultipleWindowsPageTestSuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-MultipleWindowsPageTestSuite">
-                    <span class="test-stats">3 tests</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,26 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 2 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-MultipleWindowsPageTestSuite" class="hide-methods failed suite-MultipleWindowsPageTestSuite"> (hide)</a> <!-- hide-methods failed suite-MultipleWindowsPageTestSuite -->
-                      <a href="#" panel-name="suite-MultipleWindowsPageTestSuite" class="show-methods failed suite-MultipleWindowsPageTestSuite"> (show)</a> <!-- show-methods failed suite-MultipleWindowsPageTestSuite -->
-                    </span>
-                    <div class="method-list-content failed suite-MultipleWindowsPageTestSuite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-MultipleWindowsPageTestSuite" title="com.heroku.theinternet.windows.MultipleWindowsPageTest" hash-for-method="multipleWindowsPageTest">multipleWindowsPageTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-MultipleWindowsPageTestSuite" title="com.heroku.theinternet.windows.MultipleWindowsPageTest" hash-for-method="multipleWindowsPageTest">multipleWindowsPageTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-MultipleWindowsPageTestSuite -->
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -123,7 +104,12 @@
                     <div class="method-list-content passed suite-MultipleWindowsPageTestSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-MultipleWindowsPageTestSuite" title="com.heroku.theinternet.windows.MultipleWindowsPageTest" hash-for-method="multipleWindowsPageTest">multipleWindowsPageTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-MultipleWindowsPageTestSuite" title="com.heroku.theinternet.windows.MultipleWindowsPageTest" hash-for-method="multipleWindowsPageTest(the internet)">multipleWindowsPageTest(the internet)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-MultipleWindowsPageTestSuite" title="com.heroku.theinternet.windows.MultipleWindowsPageTest" hash-for-method="multipleWindowsPageTest(New Window)">multipleWindowsPageTest(New Window)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-MultipleWindowsPageTestSuite -->
@@ -138,76 +124,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-MultipleWindowsPageTestSuite" class="panel MultipleWindowsPageTestSuite">
-          <div class="suite-MultipleWindowsPageTestSuite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.heroku.theinternet.windows.MultipleWindowsPageTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="multipleWindowsPageTest">
-                  </a> <!-- multipleWindowsPageTest -->
-                  <span class="method-name">multipleWindowsPageTest</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window
-  (Session info: chrome=86.0.4240.111)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;ABERGER-CMM01&apos;, ip: &apos;172.23.3.240&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.111, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\ZEISS~1.ABE\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:19795}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 8ff399cdc27935577e1b88519869a316
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.window(RemoteWebDriver.java:903)
-	at com.herokuapp.theinternet.pages.BasePageObject.switchToWindow(BasePageObject.java:95)
-	at com.herokuapp.theinternet.pages.MultipleWindowsPage.getTitleOfNewPage(MultipleWindowsPage.java:24)
-	at com.heroku.theinternet.windows.MultipleWindowsPageTest.multipleWindowsPageTest(MultipleWindowsPageTest.java:23)
-	at java.util.ArrayList.forEach(ArrayList.java:1249)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-... Removed 24 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="multipleWindowsPageTest">
-                  </a> <!-- multipleWindowsPageTest -->
-                  <span class="method-name">multipleWindowsPageTest</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window
-  (Session info: chrome=86.0.4240.111)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;ABERGER-CMM01&apos;, ip: &apos;172.23.3.240&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.111, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\ZEISS~1.ABE\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:19794}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 4fbbde9f571efa625d61cf8786b108d6
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.window(RemoteWebDriver.java:903)
-	at com.herokuapp.theinternet.pages.BasePageObject.switchToWindow(BasePageObject.java:95)
-	at com.herokuapp.theinternet.pages.MultipleWindowsPage.getTitleOfNewPage(MultipleWindowsPage.java:24)
-	at com.heroku.theinternet.windows.MultipleWindowsPageTest.multipleWindowsPageTest(MultipleWindowsPageTest.java:23)
-	at java.util.ArrayList.forEach(ArrayList.java:1249)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-... Removed 24 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-MultipleWindowsPageTestSuite-class-failed -->
           <div class="suite-MultipleWindowsPageTestSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -216,9 +132,18 @@ Session ID: 4fbbde9f571efa625d61cf8786b108d6
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="multipleWindowsPageTest">
-                  </a> <!-- multipleWindowsPageTest -->
+                  <a name="multipleWindowsPageTest(the internet)">
+                  </a> <!-- multipleWindowsPageTest(the internet) -->
                   <span class="method-name">multipleWindowsPageTest</span>
+                  <span class="parameters">(the internet)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="multipleWindowsPageTest(New Window)">
+                  </a> <!-- multipleWindowsPageTest(New Window) -->
+                  <span class="method-name">multipleWindowsPageTest</span>
+                  <span class="parameters">(New Window)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -226,31 +151,27 @@ Session ID: 4fbbde9f571efa625d61cf8786b108d6
         </div> <!-- panel MultipleWindowsPageTestSuite -->
         <div panel-name="test-xml-MultipleWindowsPageTestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\Books\eclipse-workspace\Automation-testing\src\test\resources\TestSuites\SeparateTestSuites\MultipleWindowsPageTestSuite.xml</span>
+            <span class="header-content">C:\Users\serge\eclipse-workspace\Automation-testing\src\test\resources\TestSuites\SeparateTestSuites\MultipleWindowsPageTestSuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;3&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;MultipleWindowsPageTestSuite&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test thread-count=&quot;3&quot; name=&quot;MultipleWindowsPageTestSuite-CH1&quot; parallel=&quot;tests&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; name=&quot;MultipleWindowsPageTestSuite-CH&quot; parallel=&quot;tests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;parameter name=&quot;title&quot; value=&quot;New Window&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.heroku.theinternet.windows.MultipleWindowsPageTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- MultipleWindowsPageTestSuite-CH1 --&gt;
+  &lt;/test&gt; &lt;!-- MultipleWindowsPageTestSuite-CH --&gt;
   &lt;test thread-count=&quot;3&quot; name=&quot;MultipleWindowsPageTestSuite-FF&quot; parallel=&quot;tests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;parameter name=&quot;title&quot; value=&quot;the internet&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.heroku.theinternet.windows.MultipleWindowsPageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- MultipleWindowsPageTestSuite-FF --&gt;
-  &lt;test thread-count=&quot;3&quot; name=&quot;MultipleWindowsPageTestSuite-CH2&quot; parallel=&quot;tests&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;com.heroku.theinternet.windows.MultipleWindowsPageTest&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- MultipleWindowsPageTestSuite-CH2 --&gt;
 &lt;/suite&gt; &lt;!-- MultipleWindowsPageTestSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -262,13 +183,10 @@ Session ID: 4fbbde9f571efa625d61cf8786b108d6
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">MultipleWindowsPageTestSuite-CH1 (1 class)</span>
+                <span class="test-name">MultipleWindowsPageTestSuite-CH (1 class)</span>
               </li>
               <li>
                 <span class="test-name">MultipleWindowsPageTestSuite-FF (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">MultipleWindowsPageTestSuite-CH2 (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -294,24 +212,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'multipleWindowsPageTest')
 data.setCell(0, 2, 'com.heroku.theinternet.windows.MultipleWindowsPageTest')
-data.setCell(0, 3, 4565);
+data.setCell(0, 3, 3567);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'multipleWindowsPageTest')
 data.setCell(1, 2, 'com.heroku.theinternet.windows.MultipleWindowsPageTest')
-data.setCell(1, 3, 4376);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'multipleWindowsPageTest')
-data.setCell(2, 2, 'com.heroku.theinternet.windows.MultipleWindowsPageTest')
-data.setCell(2, 3, 1455);
+data.setCell(1, 3, 1558);
 window.suiteTableData['MultipleWindowsPageTestSuite']= { tableData: data, tableDiv: 'times-div-MultipleWindowsPageTestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-MultipleWindowsPageTestSuite">
               </div> <!-- times-div-MultipleWindowsPageTestSuite -->
             </div> <!-- times-div -->
@@ -339,44 +253,28 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.heroku.theinternet.windows.MultipleWindowsPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">setUpDriver(chrome, org.testng.TestRunner@45820e51)</span>
+                <span class="method-name">setUpDriver(firefox, org.testng.TestRunner@33723e30)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
-                <span class="method-name">setUpDriver(firefox, org.testng.TestRunner@42d8062c)</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="configuration-test before">
-                <span class="method-name">setUpDriver(chrome, org.testng.TestRunner@29b5cd00)</span>
+                <span class="method-name">setUpDriver(chrome, org.testng.TestRunner@64f6106c)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">multipleWindowsPageTest</span>
-                <span class="method-start">5929 ms</span>
+                <span class="method-name">multipleWindowsPageTest(New Window)</span>
+                <span class="method-start">4103 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">multipleWindowsPageTest</span>
-                <span class="method-start">5931 ms</span>
+                <span class="method-name">multipleWindowsPageTest(the internet)</span>
+                <span class="method-start">5683 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">10325 ms</span>
+                <span class="method-start">7247 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">10500 ms</span>
-              </div> <!-- configuration-test after -->
-              <div class="test-method">
-                <span class="method-name">multipleWindowsPageTest</span>
-                <span class="method-start">11963 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">13419 ms</span>
+                <span class="method-start">7672 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
