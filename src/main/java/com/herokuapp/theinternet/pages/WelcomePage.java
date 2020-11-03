@@ -7,10 +7,11 @@ import org.openqa.selenium.WebDriver;
 public class WelcomePage extends BasePageObject {
 
 	private String pageUrl = "http://the-internet.herokuapp.com/";
-	private By formAuthenticationLink = By.xpath("//*[@id=\'content\']/ul/li[21]/a");
+	private By formAuthenticationLinkLocator = By.xpath("//*[@id=\'content\']/ul/li[21]/a");
 	private By checkboxesLinkLocator=By.linkText("Checkboxes");
 	private By alertsLinkLocator=By.linkText("JavaScript Alerts");
-	private By multipleWindowsLocator=By.xpath("//*[text()='Multiple Windows']");
+	private By multipleWindowsLinkLocator=By.xpath("//*[text()='Multiple Windows']");
+	private By wYSIWYGLinkLocator=By.linkText("WYSIWYG Editor");
 
 	public WelcomePage(WebDriver driver, Logger log) {
 		super(driver, log);
@@ -25,7 +26,7 @@ public class WelcomePage extends BasePageObject {
 	/**open login page by clicking form Authentication link*/
 	public LoginPage clickFormAuthenticationLink() {
 		this.log.info("Click form Authentication link.");
-		this.click(this.formAuthenticationLink);
+		this.click(this.formAuthenticationLinkLocator);
 		return new LoginPage(this.driver, this.log);
 	}
 	
@@ -46,7 +47,14 @@ public class WelcomePage extends BasePageObject {
 	/**open Multiple windows page by clicking multiple windows link*/
 	public MultipleWindowsPage clickMultipleWindowsLink() {
 		this.log.info("Click Multiple Windows link.");
-		this.click(this.multipleWindowsLocator);
+		this.click(this.multipleWindowsLinkLocator);
 		return new MultipleWindowsPage(this.driver, this.log);
+	}
+	
+	/**open WYSIWYG Editor page by clicking WYSIWYG Editor link*/
+	public IFramePage clickWYSIWYGLink() {
+		this.log.info("Click WYSIWYG Editor link.");
+		this.click(this.wYSIWYGLinkLocator);
+		return new IFramePage(this.driver, this.log);
 	}
 }
