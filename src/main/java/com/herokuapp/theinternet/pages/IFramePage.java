@@ -21,9 +21,11 @@ public class IFramePage extends BasePageObject {
 		super(driver, log);
 	}
 
-	/** get iframe default content */
+	/** get iframe editor default content */
 	public String getIframeContent() {
+		this.log.info("Switched to iframe.");
 		this.switchToIFrame(frameId);
-		return this.find(this.frameTextBox).getAttribute("innerHTML");
+		return this.find(this.frameTextBox).getText();//getAttribute("innerHTML");
+		
 	}
 }
