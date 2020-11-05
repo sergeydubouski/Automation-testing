@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
 /**
  * class IFramePage.
  * 
@@ -14,18 +15,20 @@ import org.openqa.selenium.WebElement;
  */
 public class IFramePage extends BasePageObject {
 
-	String frameId = "mce_0_ifr";
-	private By frameTextBox = By.xpath("//body[@id='tinymce']");
+	String iFrameId = "mce_0_ifr";
+	private By iFrameEditorWindow = By.xpath("//body[@id='tinymce']");
 
 	public IFramePage(WebDriver driver, Logger log) {
 		super(driver, log);
 	}
 
 	/** get iframe editor default content */
-	public String getIframeContent() {
+	public String getEditorContent() {
 		this.log.info("Switched to iframe.");
-		this.switchToIFrame(frameId);
-		return this.find(this.frameTextBox).getText();//getAttribute("innerHTML");
+		this.switchToIFrame(iFrameId);
+		String editorText=this.find(this.iFrameEditorWindow).getText();
+		this.log.info("The editor window text:\s"+editorText);
+		return editorText;
 		
 	}
 }
