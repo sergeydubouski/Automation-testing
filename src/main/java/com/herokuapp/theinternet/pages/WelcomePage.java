@@ -12,6 +12,7 @@ public class WelcomePage extends BasePageObject {
 	private By alertsLinkLocator=By.linkText("JavaScript Alerts");
 	private By multipleWindowsLinkLocator=By.xpath("//*[text()='Multiple Windows']");
 	private By wYSIWYGLinkLocator=By.linkText("WYSIWYG Editor");
+	private By keyPressesLinkLocator=By.linkText("Key Presses");
 
 	public WelcomePage(WebDriver driver, Logger log) {
 		super(driver, log);
@@ -56,5 +57,12 @@ public class WelcomePage extends BasePageObject {
 		this.log.info("Click WYSIWYG Editor link.");
 		this.click(this.wYSIWYGLinkLocator);
 		return new IFramePage(this.driver, this.log);
+	}
+	
+	/**open Key Presses page by clicking Key Presses link*/
+	public KeyPressesPage clickKeyPressesLink() {
+		this.log.info("Click Key Presses link.");
+		this.click(this.keyPressesLinkLocator);
+		return new KeyPressesPage(this.driver, this.log);
 	}
 }
