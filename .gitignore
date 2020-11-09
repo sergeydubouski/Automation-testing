@@ -1,4 +1,15 @@
-/
-target/
-test-output/
-.settings/
+
+*.class
+
+*.classpath
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+.settings
+
+target
+
+test-output

@@ -121,4 +121,10 @@ public class BasePageObject {
 		WebDriverWait wait = new WebDriverWait(driver, (timeInSec != null ? timeInSec : 30));
 		wait.until(condition);
 	}
+
+	/** switch focus to iframe by id */
+	void switchToIFrame(String id) {
+		this.driver.switchTo().frame(id);
+	}
+
 }

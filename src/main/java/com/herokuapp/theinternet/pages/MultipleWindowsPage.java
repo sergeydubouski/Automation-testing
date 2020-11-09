@@ -1,4 +1,3 @@
-
 package com.herokuapp.theinternet.pages;
 
 import org.apache.logging.log4j.Logger;

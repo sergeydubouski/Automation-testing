@@ -9,6 +9,12 @@ import com.herokuapp.theinternet.base.TestUtil;
 import com.herokuapp.theinternet.pages.WelcomePage;
 import com.herokuapp.theinternet.pages.MultipleWindowsPage;
 
+/**
+ * class MultipleWindowsPageTest.
+ * @author SD
+ * @version 1.0
+ * @since 3.11.2020
+ */
 public class MultipleWindowsPageTest extends TestUtil {
 
 	@Test
