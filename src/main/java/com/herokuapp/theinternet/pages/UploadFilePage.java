@@ -14,8 +14,9 @@ import org.openqa.selenium.WebDriver;
 public class UploadFilePage extends BasePageObject {
 	
 	private String pageUrl="http://the-internet.herokuapp.com/upload";
-	private By fileUploadElementLocator=By.xpath("file-upload");
-	private By fileSubmitButtonLocator=By.xpath("file-submit");
+	private By fileUploadElementLocator=By.id("file-upload");
+	private By fileUploadButtonLocator=By.id("file-submit");
+	private String fileToUploadDirectory="D:\\Books\\eclipse-workspace\\Automation-testing\\src\\main\\resources\\Test\\Test.txt";
 	
 
 	public UploadFilePage(WebDriver driver, Logger log) {
@@ -27,6 +28,19 @@ public class UploadFilePage extends BasePageObject {
 	this.open(this.pageUrl);
 	}
 	
+	/**Send the path to file upload web element*/
+	private void sendFilePath(By fileUploadElementLocator,String fileToUploadDirectory) {
+		this.type(fileUploadElementLocator,fileToUploadDirectory);
+	}
 	
-
+	/**Click upload button*/
+	private void clickUploadButton() {
+		this.click(this.fileUploadButtonLocator);
+	}
+	
+	/**Upload a file by sending a path to a file upload web element and clicking upload button*/
+	public void uploadFile() {
+		this.sendFilePath(this.fileUploadElementLocator,this.fileToUploadDirectory);
+		this.clickUploadButton();
+	}
 }
