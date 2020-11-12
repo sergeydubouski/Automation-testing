@@ -1,5 +1,6 @@
 package com.heroku.theinterne.uploadfilepagetests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.herokuapp.theinternet.base.TestUtil;
@@ -23,6 +24,11 @@ public class UploadFilePageTest extends TestUtil {
 
 		// upload file
 		uploadFilePage.uploadFile();
-		this.sleep(5000);
+		
+		//verification
+		//verify if upload was successful
+		Assert.assertTrue(uploadFilePage.getSuccessMsg().contains("File Uploaded!"), "Success message doesn't contain text [File Uploaded!]. Actual ["+uploadFilePage.getSuccessMsg()+"],"
+				+ "], but Expected[File Uploaded!]");
+
 	}
 }
