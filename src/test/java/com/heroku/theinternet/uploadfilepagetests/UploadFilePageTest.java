@@ -1,4 +1,4 @@
-package com.heroku.theinterne.uploadfilepagetests;
+package com.heroku.theinternet.uploadfilepagetests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
