@@ -1,4 +1,4 @@
-package com.heroku.theinternet.iframetests;
+package com.heroku.theinternet.iframepagetests;
 
 import org.testng.annotations.Test;
 import org.testng.Assert;

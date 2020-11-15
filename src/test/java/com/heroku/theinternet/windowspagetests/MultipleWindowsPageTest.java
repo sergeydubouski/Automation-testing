@@ -1,4 +1,4 @@
-package com.heroku.theinternet.windows;
+package com.heroku.theinternet.windowspagetests;
 
 import org.testng.Assert;
 import org.testng.annotations.Parameters;

@@ -1,4 +1,4 @@
-package com.heroku.theinternet.alerts;
+package com.heroku.theinternet.alertspagetests;
 
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
