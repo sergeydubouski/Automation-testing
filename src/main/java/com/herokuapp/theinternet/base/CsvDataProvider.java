@@ -1,10 +1,19 @@
 package com.herokuapp.theinternet.base;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import org.testng.annotations.DataProvider;
+
+import com.opencsv.CSVReader;
 
 /**
  * class CsvDataProvider.
@@ -16,13 +25,40 @@ import org.testng.annotations.DataProvider;
 
 public class CsvDataProvider {
 
-	/** read parameters from csv file to parametrize a test */
+	/**
+	 * read parameters from csv file to parametrize a test
+	 * 
+	 * @throws FileNotFoundException
+	 */
 	@DataProvider(name = "dataprovider")
 	public static Iterator<Object[]> csvDataProvider(Method m) {
 
 		String path = "src" + File.separator + "test" + File.separator + "resources" + File.separator + "dataproviders"
 				+ File.separator + m.getDeclaringClass().getSimpleName() + File.separator + m.getName();
-		return null;
+		List<Object[]> list = new ArrayList<Object[]>();
 
+		try {
+			CSVReader csvReader = new CSVReader(new FileReader(path));
+
+			String[] key = csvReader.readNext();
+			if (key != null) {
+				String[] value;
+				while ((value= csvReader.readNext()) != null) {
+					Map<String, String> dataSet = new HashMap<String, String>();
+					for (int i = 0; i < key.length; i++) {
+						dataSet.put(key[i], value[i]);
+					}
+					list.add(new Object[] { dataSet });
+				}
+				csvReader.close();
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("The file [" + path + "] is not accessible. Please verify the file path/name.");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("The file [" + path + "] is not readable. Please verify the file.");
+			e.printStackTrace();
+		}
+		return list.iterator();
 	}
 }
