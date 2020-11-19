@@ -1,16 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.hirokuapp.theinternet</groupId>
-  <artifactId>advanced-java-selenium-draft</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-<dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hirokuapp.theinternet</groupId>
+	<artifactId>advanced-java-selenium-draft</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -18,8 +20,8 @@
 			<version>7.3.0</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
-		
-		<!--https://logging.apache.org/log4j/2.x/maven-artifacts.html-->
+
+		<!--https://logging.apache.org/log4j/2.x/maven-artifacts.html -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
@@ -30,7 +32,12 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.13.3</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>3.3</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
