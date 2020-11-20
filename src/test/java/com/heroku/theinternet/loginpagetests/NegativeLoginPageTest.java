@@ -23,11 +23,12 @@ public class NegativeLoginPageTest extends TestUtil {
 	@Test(priority = 1, dataProvider = "csvDataReader", dataProviderClass = CsvDataProvider.class)
 	void negativeLogInTest(Map<String,String>testData) {
 		
-		String id=testData.get("id");
+		String no=testData.get("no");
+		String description=testData.get("description");
 		String username=testData.get("username");
 		String password=testData.get("password");
-		String expectedErrMsgForInvalidLogin=testData.get("expectedErrMsgForInvalidLogin");
-		String description=testData.get("description");
+		String expectedErrMsgForInvalidLogin=testData.get("expectedErrMsg");
+		
 		
 		this.log.info("Starting negative login page test ["+id+"]["+description+"]");
 
