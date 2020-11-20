@@ -1,9 +1,12 @@
 package com.heroku.theinternet.loginpagetests;
 
+import java.util.Map;
+
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.herokuapp.theinternet.base.CsvDataProvider;
 import com.herokuapp.theinternet.base.TestUtil;
 import com.herokuapp.theinternet.pages.LoginPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
@@ -17,9 +20,16 @@ import com.herokuapp.theinternet.pages.WelcomePage;
  */
 public class NegativeLoginPageTest extends TestUtil {
 
-	@Test
-	@Parameters({"username","password","expectedErrMsgForInvalidLogin" })
-	void logInTestRun(String username,String password,String expectedErrMsgForInvalidLogin) {
+	@Test(priority = 1, dataProvider = "csvDataReader", dataProviderClass = CsvDataProvider.class)
+	void negativeLogInTest(Map<String,String>testData) {
+		
+		String id=testData.get("id");
+		String username=testData.get("username");
+		String password=testData.get("password");
+		String expectedErrMsgForInvalidLogin=testData.get("expectedErrMsgForInvalidLogin");
+		String description=testData.get("description");
+		
+		this.log.info("Starting negative login page test ["+id+"]["+description+"]");
 
 		// Open welcome page
 		WelcomePage welcomePage = new WelcomePage(this.driver, this.log);
@@ -32,7 +42,7 @@ public class NegativeLoginPageTest extends TestUtil {
 		loginPage.negativeLogin(username, password);
 
 		// Verification
-		
+
 		// Login button is visible
 		Assert.assertTrue(loginPage.isLoginButtonVisible(), "Login button is not visible");
 		// Same page url is expected
@@ -41,6 +51,7 @@ public class NegativeLoginPageTest extends TestUtil {
 		// Error message is expected
 		String actualErrMsg = loginPage.getErrMsgForInvalidLogin();
 		Assert.assertTrue(actualErrMsg.contains(expectedErrMsgForInvalidLogin),
-				"Error message is incorrect. Expected:\s " + expectedErrMsgForInvalidLogin + ", but actual:\s" + actualErrMsg);
+				"Error message is incorrect. Expected:\s " + expectedErrMsgForInvalidLogin + ", but actual:\s"
+						+ actualErrMsg);
 	}
 }

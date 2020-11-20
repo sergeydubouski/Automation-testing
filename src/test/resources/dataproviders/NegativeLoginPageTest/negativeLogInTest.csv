@@ -1,0 +1,5 @@
+id,username,password,expectedErrMsgForInvalidLogin,description
+1,tomsmith,SuperSecretPassword,Your password is invalid!,incorrect password
+2,Tomsmith,SuperSecretPassword!,Your username is invalid!,incorrect username
+3,tomsmith,,Your password is invalid!,missing password
+4,,SuperSecretPassword!,Your username is invalid!,missing username

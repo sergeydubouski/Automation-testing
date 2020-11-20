@@ -25,16 +25,12 @@ import com.opencsv.CSVReader;
 
 public class CsvDataProvider {
 
-	/**
-	 * read parameters from csv file to parametrize a test
-	 * 
-	 * @throws FileNotFoundException
-	 */
-	@DataProvider(name = "dataprovider")
-	public static Iterator<Object[]> csvDataProvider(Method m) {
+	@DataProvider(name = "csvDataReader")
+	public static Iterator<Object[]> csvDataReader(Method m) {
 
 		String path = "src" + File.separator + "test" + File.separator + "resources" + File.separator + "dataproviders"
-				+ File.separator + m.getDeclaringClass().getSimpleName() + File.separator + m.getName();
+				+ File.separator + m.getDeclaringClass().getSimpleName() + File.separator + m.getName()+".csv";
+
 		List<Object[]> list = new ArrayList<Object[]>();
 
 		try {
@@ -43,7 +39,7 @@ public class CsvDataProvider {
 			String[] key = csvReader.readNext();
 			if (key != null) {
 				String[] value;
-				while ((value= csvReader.readNext()) != null) {
+				while ((value = csvReader.readNext()) != null) {
 					Map<String, String> dataSet = new HashMap<String, String>();
 					for (int i = 0; i < key.length; i++) {
 						dataSet.put(key[i], value[i]);

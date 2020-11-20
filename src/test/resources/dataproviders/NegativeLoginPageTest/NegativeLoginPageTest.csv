@@ -1,5 +1,0 @@
-id,username,password,errormessage,description
-1,tomsmith,SuperSecretPassword,Test failed with incorrect password,incorrect password
-2,Tomsmith,SuperSecretPassword!,Test failed with incorrect username,incorrect username
-3,tomsmith,,Test failed with missing password,missing password
-4,,SuperSecretPassword!,Test failed with missing username,missing username
