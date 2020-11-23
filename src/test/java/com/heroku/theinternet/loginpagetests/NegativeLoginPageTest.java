@@ -30,17 +30,20 @@ public class NegativeLoginPageTest extends TestUtil {
 		String expectedErrMsgForInvalidLogin=testData.get("expectedErrMsg");
 		
 		
-		this.log.info("Starting negative login page test ["+id+"]["+description+"]");
+		this.log.info("Starting negative login page test ["+no+"]["+description+"]");
 
 		// Open welcome page
 		WelcomePage welcomePage = new WelcomePage(this.driver, this.log);
 		welcomePage.openWelcomePage();
+		this.takeScreenshot("WelcomePage opened.");
 
 		// Click form Authentication link
 		LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
+		this.takeScreenshot("LoginPage opened.");
 
 		// Execute log in with incorrect credentials
 		loginPage.negativeLogin(username, password);
+		this.takeScreenshot("LoginPage with invalid login message.");
 
 		// Verification
 

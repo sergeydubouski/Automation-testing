@@ -8,11 +8,11 @@
 				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
 		</classes>
 	</test>
-	<!-- <test name="NegativeUSERNAMETest-FF">
+	<test name="NegativeLoginTest-FF">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class
 				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
 		</classes>
-	</test> -->
+	</test>
 </suite>
