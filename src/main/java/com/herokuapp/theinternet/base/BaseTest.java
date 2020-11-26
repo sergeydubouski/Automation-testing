@@ -1,6 +1,5 @@
 package com.herokuapp.theinternet.base;
 
-
 import java.lang.reflect.Method;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
@@ -21,6 +21,8 @@ import org.testng.annotations.Parameters;
  * @version 1.0
  * @since 17.10.2020
  */
+
+@Listeners({ com.herokuapp.theinternet.base.TestListener.class })
 public class BaseTest {
 
 	protected String browser;
@@ -29,21 +31,21 @@ public class BaseTest {
 	protected String testSuiteName;
 	protected String testName;
 	protected String testMethodName;
-	
-		@Parameters({ "browser" }) 
-	@BeforeMethod(alwaysRun = true) 
-	protected void setUpDriver(Method method,@Optional("chrome") String browser, ITestContext ctx) {
+
+	@Parameters({ "browser" })
+	@BeforeMethod(alwaysRun = true)
+	protected void setUpDriver(Method method, @Optional("chrome") String browser, ITestContext ctx) {
 
 		this.browser = browser;
 
 		String name = ctx.getCurrentXmlTest().getName();
-		this.log = LogManager.getLogger(name);		
-	
+		this.log = LogManager.getLogger(name);
+
 		this.driver = new BrowserFactory(this.browser, this.log).createDriver();
-		
-		this.testSuiteName=ctx.getSuite().getName();
-		this.testName=name;
-		this.testMethodName=method.getName();
+
+		this.testSuiteName = ctx.getSuite().getName();
+		this.testName = name;
+		this.testMethodName = method.getName();
 	}
 
 	@AfterMethod(alwaysRun = true)
