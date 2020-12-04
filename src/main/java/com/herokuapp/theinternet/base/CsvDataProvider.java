@@ -26,12 +26,12 @@ import com.opencsv.CSVReader;
 public class CsvDataProvider {
 
 	@DataProvider(name = "csvDataReader")
-	public static Iterator<Object[]> csvDataReader(Method m) {
+	public static Iterator<Map> csvDataReader(Method m) {
 
 		String path = "src" + File.separator + "test" + File.separator + "resources" + File.separator + "dataproviders"
 				+ File.separator + m.getDeclaringClass().getSimpleName() + File.separator + m.getName()+".csv";
 
-		List<Object[]> list = new ArrayList<Object[]>();
+		List<Map> list = new ArrayList<Map>();
 
 		try {
 			CSVReader csvReader = new CSVReader(new FileReader(path));
@@ -44,7 +44,8 @@ public class CsvDataProvider {
 					for (int i = 0; i < key.length; i++) {
 						dataSet.put(key[i], value[i]);
 					}
-					list.add(new Object[] { dataSet });
+					list.add(dataSet);
+					//list.add(new Object[] { dataSet });
 				}
 				csvReader.close();
 			}
