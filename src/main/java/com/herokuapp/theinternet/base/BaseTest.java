@@ -28,9 +28,9 @@ public class BaseTest {
 	protected String browser;
 	protected Logger log;
 	protected WebDriver driver;
-	protected String testSuiteName;
-	protected String testName;
-	protected String testMethodName;
+	protected String testSuiteName;//used in takeScreenshot method
+	protected String testName;//used in takeScreenshot method
+	protected String testMethodName;//used in takeScreenshot method
 
 	@Parameters({ "browser" })
 	@BeforeMethod(alwaysRun = true)
