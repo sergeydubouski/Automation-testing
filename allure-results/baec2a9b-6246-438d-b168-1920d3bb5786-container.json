@@ -1,0 +1,1 @@
+{"uuid":"baec2a9b-6246-438d-b168-1920d3bb5786","name":"CheckboxesPageTestSuite","children":["cbf6e3b1-f737-439e-9ec3-dc89c1b4a50c"],"befores":[{"name":"setExtentReport","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1608084388077,"stop":1608084388448}],"afters":[],"links":[],"start":1608084388062,"stop":1608084393976}

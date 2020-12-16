@@ -1,18 +1,27 @@
 package com.herokuapp.theinternet.base;
 
+import java.io.File;
 import java.lang.reflect.Method;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 /**
  * class BaseTest.
@@ -28,30 +37,57 @@ public class BaseTest {
 	protected String browser;
 	protected Logger log;
 	protected WebDriver driver;
-	protected String testSuiteName;//used in takeScreenshot method
-	protected String testName;//used in takeScreenshot method
-	protected String testMethodName;//used in takeScreenshot method
+	protected ExtentSparkReporter sparkReport;// extent report class
+	protected ExtentReports extentReport;// extent report class
+	protected ExtentTest extentTest;// extent report class
+	protected String testSuiteName;// used in takeScreenshot method
+	protected String testName;// used in takeScreenshot method
+	protected String testMethodName;// used in takeScreenshot method
 
 	@Parameters({ "browser" })
 	@BeforeMethod(alwaysRun = true)
-	protected void setUpDriver(Method method, @Optional("chrome") String browser, ITestContext ctx) {
+	protected void setUpDriver(Method method, @Optional("chrome") String browser) {
 
+		this.testMethodName = method.getName();
 		this.browser = browser;
-
-		String name = ctx.getCurrentXmlTest().getName();
-		this.log = LogManager.getLogger(name);
-
 		this.driver = new BrowserFactory(this.browser, this.log).createDriver();
+		
+		this.extentTest=this.extentReport.createTest(this.testMethodName);
+	}
 
+	@BeforeSuite
+	protected void setExtentReport(ITestContext ctx) {
+		String name = ctx.getCurrentXmlTest().getName();
 		this.testSuiteName = ctx.getSuite().getName();
 		this.testName = name;
-		this.testMethodName = method.getName();
+		this.log = LogManager.getLogger(name);
+
+		this.sparkReport = new ExtentSparkReporter(
+				System.getProperty("user.dir") + File.separator + "test-output" + File.separator + "QATestReport.html");
+		this.sparkReport.config().setDocumentTitle(this.testSuiteName);// title of the report
+		this.sparkReport.config().setReportName(this.testSuiteName);// name of the report
+		this.sparkReport.config().setTheme(Theme.DARK);
+
+		this.extentReport = new ExtentReports();
+		this.extentReport.setSystemInfo("Hostname", "Localhost");
+		this.extentReport.setSystemInfo("OS", "Windows10");
+		this.extentReport.setSystemInfo("Tester name", "SD");
 	}
 
 	@AfterMethod(alwaysRun = true)
 	protected void tearDown() {
 		this.log.info("Close browser\s" + this.browser + ".");
 		this.driver.quit();
+	}
+
+	@AfterTest(alwaysRun = true)
+	protected void endExtentreport(ITestResult result) {
+		if(result.getStatus()==ITestResult.FAILURE) {
+			this.extentTest.log(Status.FAIL, "TEST FAILED IS\s"+result.getName());
+			this.extentTest.log(Status.FAIL, "TEST FAILED IS\s"+result.getThrowable());
+		}
+		
+		this.extentReport.flush();
 	}
 
 }
