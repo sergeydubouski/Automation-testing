@@ -31,63 +31,32 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
  * @since 17.10.2020
  */
 
-@Listeners({ com.herokuapp.theinternet.base.TestListener.class })
+//@Listeners({ com.herokuapp.theinternet.base.TestListener.class })
 public class BaseTest {
 
 	protected String browser;
 	protected Logger log;
 	protected WebDriver driver;
-	protected ExtentSparkReporter sparkReport;// extent report class
-	protected ExtentReports extentReport;// extent report class
-	protected ExtentTest extentTest;// extent report class
 	protected String testSuiteName;// used in takeScreenshot method
 	protected String testName;// used in takeScreenshot method
 	protected String testMethodName;// used in takeScreenshot method
 
 	@Parameters({ "browser" })
 	@BeforeMethod(alwaysRun = true)
-	protected void setUpDriver(Method method, @Optional("chrome") String browser) {
+	protected void setUpDriver(Method method, @Optional("chrome") String browser, ITestContext ctx) {
 
-		this.testMethodName = method.getName();
-		this.browser = browser;
-		this.driver = new BrowserFactory(this.browser, this.log).createDriver();
-		
-		this.extentTest=this.extentReport.createTest(this.testMethodName);
-	}
-
-	@BeforeSuite
-	protected void setExtentReport(ITestContext ctx) {
-		String name = ctx.getCurrentXmlTest().getName();
+		String name=ctx.getCurrentXmlTest().getName();
 		this.testSuiteName = ctx.getSuite().getName();
 		this.testName = name;
 		this.log = LogManager.getLogger(name);
-
-		this.sparkReport = new ExtentSparkReporter(
-				System.getProperty("user.dir") + File.separator + "test-output" + File.separator + "QATestReport.html");
-		this.sparkReport.config().setDocumentTitle(this.testSuiteName);// title of the report
-		this.sparkReport.config().setReportName(this.testSuiteName);// name of the report
-		this.sparkReport.config().setTheme(Theme.DARK);
-
-		this.extentReport = new ExtentReports();
-		this.extentReport.setSystemInfo("Hostname", "Localhost");
-		this.extentReport.setSystemInfo("OS", "Windows10");
-		this.extentReport.setSystemInfo("Tester name", "SD");
+		this.testMethodName = method.getName();
+		this.browser = browser;
+		this.driver = new BrowserFactory(this.browser, this.log).createDriver();	
 	}
 
 	@AfterMethod(alwaysRun = true)
 	protected void tearDown() {
 		this.log.info("Close browser\s" + this.browser + ".");
 		this.driver.quit();
-	}
-
-	@AfterTest(alwaysRun = true)
-	protected void endExtentreport(ITestResult result) {
-		if(result.getStatus()==ITestResult.FAILURE) {
-			this.extentTest.log(Status.FAIL, "TEST FAILED IS\s"+result.getName());
-			this.extentTest.log(Status.FAIL, "TEST FAILED IS\s"+result.getThrowable());
-		}
-		
-		this.extentReport.flush();
-	}
-
+	}	
 }

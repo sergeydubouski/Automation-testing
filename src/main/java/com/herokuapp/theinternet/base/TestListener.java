@@ -13,26 +13,26 @@ import org.testng.ITestResult;
  * @version 1.0
  * @since 26.11.2020
  */
-public class TestListener implements ITestListener {
+public class TestListener extends TestUtil  implements ITestListener {
 
-	Logger log;
-	String testName;
-	String testMethodName;
+	private Logger logListener;
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		this.testMethodName = result.getMethod().getMethodName();
-		this.log.info("[TEST METHOD " + this.testMethodName + " STARTED]");
+		this.logListener.info("[TEST METHOD\s" + result.getName() + " STARTED]");
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		this.log.info("[TEST METHOD " + this.testMethodName + " PASSED]");
+		this.logListener.info("[TEST METHOD\s" +  result.getName() + " PASSED]");
+		this.takeScreenshot("PASSED TEST:\s"+ result.getName());	
+		
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		this.log.info("[TEST METHOD " + this.testMethodName + " FAILED]");
+		this.logListener.info("[TEST METHOD " +  result.getName() + " FAILED]");
+		this.takeScreenshot("FAILED TEST:\s"+ result.getName());	
 	}
 
 	@Override
@@ -55,15 +55,14 @@ public class TestListener implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
-		this.testName = context.getSuite().getName()+"->"+context.getCurrentXmlTest().getName();
-		this.log = LogManager.getLogger(this.testName);
-		this.log.info("[TEST " + this.testName + " STARTED]");
+		this.logListener = LogManager.getLogger(context.getName()+"@Listener");
+		this.logListener.info("[TEST " + context.getName() + " STARTED]");
 
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
-		this.log.info("[TEST " + this.testName + " FINISHED]");
+		this.logListener.info("[TEST " + context.getName() + " FINISHED]");
 	}
 
 }

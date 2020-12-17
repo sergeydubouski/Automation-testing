@@ -7,9 +7,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 
 /**
  * class TestUtil.
@@ -30,7 +34,7 @@ public class TestUtil extends BaseTest {
 	}
 
 	/** take and save a screenshot */
-	protected void takeScreenshot(String fileName) {
+	public String takeScreenshot(String fileName) {
 
 		// screenshot file location
 		String screenshotFileLocation = System.getProperty("user.dir") + File.separator + "test-output" + File.separator
@@ -51,5 +55,6 @@ public class TestUtil extends BaseTest {
 			System.out.println("Cannot save the screenshot. Please verify the file path.");
 			e.printStackTrace();
 		}
-	}
+		return screenshotFileLocation;
+	}	
 }

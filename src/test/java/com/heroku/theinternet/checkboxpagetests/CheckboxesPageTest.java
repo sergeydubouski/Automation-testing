@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.herokuapp.theinternet.base.TestListener;
 import com.herokuapp.theinternet.base.TestUtil;
 import com.herokuapp.theinternet.pages.CheckboxesPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
@@ -14,7 +15,7 @@ import com.herokuapp.theinternet.pages.WelcomePage;
  * @version 1.0
  * @since 18.10.2020
  */
-public class CheckboxesPageTest extends TestUtil {
+public class CheckboxesPageTest extends TestListener {
 
 	@Test
 	public void selectingTwoCheckboxesTest() {
