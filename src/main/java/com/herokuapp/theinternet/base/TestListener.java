@@ -13,7 +13,7 @@ import org.testng.ITestResult;
  * @version 1.0
  * @since 26.11.2020
  */
-public class TestListener extends TestUtil  implements ITestListener {
+public class TestListener implements ITestListener {
 
 	private Logger logListener;
 
