@@ -34,7 +34,8 @@ public class BaseTest {
 
 	@Parameters({ "browser" })
 	@BeforeMethod(alwaysRun = true)
-	protected void setUpDriver(Method method, @Optional("chrome") String browser, ITestContext ctx) {
+	protected void setUpDriver(Method method, @Optional("chrome") String browser, ITestContext ctx) {		
+		
 
 		this.browser = browser;
 

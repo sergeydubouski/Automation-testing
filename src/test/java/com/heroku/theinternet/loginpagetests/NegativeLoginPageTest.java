@@ -3,6 +3,7 @@ package com.heroku.theinternet.loginpagetests;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -19,7 +20,8 @@ import com.herokuapp.theinternet.pages.WelcomePage;
  * @version 1.0
  * @since 17.10.2020
  */
-public class NegativeLoginPageTest extends TestListener {
+@Listeners({ com.herokuapp.theinternet.base.TestListener.class })
+public class NegativeLoginPageTest extends TestUtil {
 
 	@Test(priority = 1, dataProvider = "csvDataReader", dataProviderClass = CsvDataProvider.class)
 	void negativeLogInTest(Map<String,String>testData) {
@@ -36,15 +38,15 @@ public class NegativeLoginPageTest extends TestListener {
 		// Open welcome page
 		WelcomePage welcomePage = new WelcomePage(this.driver, this.log);
 		welcomePage.openWelcomePage();
-		this.takeScreenshot("WelcomePage opened");
+	//	this.takeScreenshot("WelcomePage opened");
 
 		// Click form Authentication link
 		LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
-		this.takeScreenshot("LoginPage opened");
+	//	this.takeScreenshot("LoginPage opened");
 
 		// Execute log in with incorrect credentials
 		loginPage.negativeLogin(username, password);
-		this.takeScreenshot("LoginPage with invalid login message");
+	//	this.takeScreenshot("LoginPage with invalid login message");
 
 		// Verification
 

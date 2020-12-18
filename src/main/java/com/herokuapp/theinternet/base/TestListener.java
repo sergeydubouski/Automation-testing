@@ -2,6 +2,7 @@ package com.herokuapp.theinternet.base;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -16,6 +17,8 @@ import org.testng.ITestResult;
 public class TestListener implements ITestListener {
 
 	private Logger logListener;
+	private WebDriver driver;
+	
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -24,15 +27,14 @@ public class TestListener implements ITestListener {
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		this.logListener.info("[TEST METHOD\s" +  result.getName() + " PASSED]");
-		this.takeScreenshot("PASSED TEST:\s"+ result.getName());	
-		
+		this.logListener.info("[TEST METHOD\s" +  result.getName() + " PASSED]");		
+		TestUtil.takeScreenshot(result.getTestContext().getName(),"PASSED TEST\s"+result.getName());			
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		this.logListener.info("[TEST METHOD " +  result.getName() + " FAILED]");
-		this.takeScreenshot("FAILED TEST:\s"+ result.getName());	
+		TestUtil.takeScreenshot(result.getTestContext().getName(),"FAILED TEST\s"+result.getName());	
 	}
 
 	@Override

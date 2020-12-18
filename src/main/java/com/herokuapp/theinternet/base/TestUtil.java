@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -34,16 +35,16 @@ public class TestUtil extends BaseTest {
 	}
 
 	/** take and save a screenshot */
-	public String takeScreenshot(String fileName) {
+	public static void takeScreenshot(String testName,String fileName) {
 
 		// screenshot file location
 		String screenshotFileLocation = System.getProperty("user.dir") + File.separator + "test-output" + File.separator
 				+ "Screenshots" + File.separator+ new SimpleDateFormat("dd-MMM-yyyy").format(new Date())
-				+ File.separator  + this.testSuiteName + File.separator + this.testName + File.separator + this.testMethodName + File.separator
+				+ File.separator  +testName + File.separator
 				+ new SimpleDateFormat("HH-mm-ss.SSS aa").format(new Date())+" "+fileName+".png";
 
 		// Convert web driver object to TakeScreenshot
-		TakesScreenshot scrShot = ((TakesScreenshot) this.driver);
+		TakesScreenshot scrShot = ((TakesScreenshot) DriverContainer.getDriver());
 		// Call getScreenshotAs method to create image file
 		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
 		// Move image file to new destination
@@ -55,6 +56,6 @@ public class TestUtil extends BaseTest {
 			System.out.println("Cannot save the screenshot. Please verify the file path.");
 			e.printStackTrace();
 		}
-		return screenshotFileLocation;
+		//return screenshotFileLocation;
 	}	
 }
