@@ -6,14 +6,14 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
-				name="com.heroku.theinternet.iframetests.IFramesPageTest" />
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
 		</classes>
 	</test>
 	<test name="IFramesPageTestSuite-FF">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class
-				name="com.heroku.theinternet.iframetests.IFramesPageTest" />
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
 		</classes>
 	</test>
 </suite>

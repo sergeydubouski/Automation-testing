@@ -16,7 +16,7 @@ public class UploadFilePage extends BasePageObject {
 	private String pageUrl = "http://the-internet.herokuapp.com/upload";
 	private By fileUploadElementLocator = By.id("file-upload");
 	private By fileUploadButtonLocator = By.id("file-submit");
-	private String fileToUploadDirectory = "D:\\Books\\eclipse-workspace\\Automation-testing\\src\\main\\resources\\Test\\Test.txt";
+	private String fileToUploadDirectory = "C:\\Users\\serge\\eclipse-workspace\\Automation-testing\\src\\main\\resources\\Test\\Test.txt";
 	//private By successMsgLocator = By.xpath("//div[@class='example']/parent::div[@id='content']");
 	private By successMsgLocator = By.xpath("//h3");
 

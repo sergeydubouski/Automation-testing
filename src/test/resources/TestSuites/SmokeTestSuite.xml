@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="SmokeTestSuite" verbose="1" parallel="tests"
-	thread-count="4">
-	<test name="PositiveLoginPageTest-CH">
+	thread-count="100">
+	<test name="NegativeLoginTest-CH">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
-				name="com.heroku.theinternet.loginpagetests.PositiveLoginPageTest" />
+				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
 		</classes>
 	</test>
-	<test name="PositiveLoginPageTest-FF">
-		<parameter name="browser" value="firefox" />		
+	<test name="NegativeLoginTest-FF">
+		<parameter name="browser" value="firefox" />
 		<classes>
 			<class
-				name="com.heroku.theinternet.loginpagetests.PositiveLoginPageTest" />
+				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
 		</classes>
 	</test>
 	<test name="CheckboxesPageTest-CH">
@@ -30,7 +30,7 @@
 				name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest" />
 		</classes>
 	</test>
-		<test name="DragAndDropPageTestSuite-CH">
+	<test name="DragAndDropPageTestSuite-CH">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
@@ -48,28 +48,238 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
-				name="com.heroku.theinterne.uploadfilepagetests.UploadFilePageTest" />
+				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
 		</classes>
 	</test>
 	<test name="UploadFilePageTestSuite-FF">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class
-				name="com.heroku.theinterne.uploadfilepagetests.UploadFilePageTest" />
+				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
 		</classes>
 	</test>
 	<test name="IFramesPageTestSuite-CH">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
-				name="com.heroku.theinternet.iframetests.IFramesPageTest" />
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
 		</classes>
 	</test>
 	<test name="IFramesPageTestSuite-FF">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class
-				name="com.heroku.theinternet.iframetests.IFramesPageTest" />
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
 		</classes>
 	</test>
+	<!-- <test name="NegativeLoginTest2-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
+		</classes>
+	</test>
+	<test name="NegativeLoginTest2-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
+		</classes>
+	</test>
+	<test name="CheckboxesPageTest2-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest" />
+		</classes>
+	</test>
+	<test name="CheckboxesPageTest2-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest" />
+		</classes>
+	</test>
+	<test name="DragAndDropPageTestSuite2-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
+		</classes>
+	</test>
+	<test name="DragAndDropPageTestSuite2-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
+		</classes>
+	</test>
+	<test name="UploadFilePageTestSuite2-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
+		</classes>
+	</test>
+	<test name="UploadFilePageTestSuite2-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
+		</classes>
+	</test>
+	<test name="IFramesPageTestSuite2-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
+		</classes>
+	</test>
+	<test name="IFramesPageTestSuite2-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
+		</classes>
+	</test> -->
+	<!-- <test name="NegativeLoginTest3-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
+		</classes>
+	</test>
+	<test name="NegativeLoginTest3-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
+		</classes>
+	</test>
+	<test name="CheckboxesPageTest3-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest" />
+		</classes>
+	</test>
+	<test name="CheckboxesPageTest3-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest" />
+		</classes>
+	</test>
+	<test name="DragAndDropPageTestSuite3-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
+		</classes>
+	</test>
+	<test name="DragAndDropPageTestSuite3-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
+		</classes>
+	</test>
+	<test name="UploadFilePageTestSuite3-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
+		</classes>
+	</test>
+	<test name="UploadFilePageTestSuite3-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
+		</classes>
+	</test>
+	<test name="IFramesPageTestSuite3-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
+		</classes>
+	</test>
+	<test name="IFramesPageTestSuite3-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
+		</classes>
+	</test>
+	<test name="NegativeLoginTest4-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
+		</classes>
+	</test>
+	<test name="NegativeLoginTest4-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.loginpagetests.NegativeLoginPageTest" />
+		</classes>
+	</test>
+	<test name="CheckboxesPageTest4-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest" />
+		</classes>
+	</test>
+	<test name="CheckboxesPageTest4-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest" />
+		</classes>
+	</test>
+	<test name="DragAndDropPageTestSuite4-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
+		</classes>
+	</test>
+	<test name="DragAndDropPageTestSuite4-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
+		</classes>
+	</test>
+	<test name="UploadFilePageTestSuite4-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
+		</classes>
+	</test>
+	<test name="UploadFilePageTestSuite4-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
+		</classes>
+	</test>
+	<test name="IFramesPageTestSuite4-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
+		</classes>
+	</test>
+	<test name="IFramesPageTestSuite4-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
+		</classes>
+	</test> -->
 </suite>

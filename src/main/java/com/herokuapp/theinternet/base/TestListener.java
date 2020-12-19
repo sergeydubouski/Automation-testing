@@ -34,7 +34,7 @@ public class TestListener implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		this.logListener.info("[TEST METHOD " +  result.getName() + " FAILED]");
-		TestUtil.takeScreenshot(result.getTestContext().getName(),"FAILED TEST\s"+result.getName());	
+		TestUtil.takeScreenshot(result.getTestContext().getName(),"\sFAILED@"+result.getName());	
 	}
 
 	@Override

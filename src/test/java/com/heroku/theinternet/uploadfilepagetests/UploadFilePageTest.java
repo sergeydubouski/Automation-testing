@@ -19,7 +19,7 @@ public class UploadFilePageTest extends TestUtil {
 	public void uploadFileTest() {
 
 		// open upload file page
-		UploadFilePage uploadFilePage = new UploadFilePage(driver, log);
+		UploadFilePage uploadFilePage = new UploadFilePage(this.driver, this.log);
 		uploadFilePage.openPage();
 
 		// upload file
