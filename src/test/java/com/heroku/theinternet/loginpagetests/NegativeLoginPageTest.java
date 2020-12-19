@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.herokuapp.theinternet.base.CsvDataProvider;
 import com.herokuapp.theinternet.base.TestListener;
@@ -49,16 +50,17 @@ public class NegativeLoginPageTest extends TestUtil {
 	//	this.takeScreenshot("LoginPage with invalid login message");
 
 		// Verification
-
+		
+		SoftAssert softAssert=new SoftAssert();
 		// Login button is visible
-		Assert.assertTrue(loginPage.isLoginButtonVisible(), "Login button is not visible");
-		// Same page url is expected
-		Assert.assertEquals(loginPage.getCurrentUrl(), loginPage.getPageUrl(),
-				"Incorrect url. Expected:\s" + loginPage.getPageUrl() + ",but actual:\s " + loginPage.getCurrentUrl());
-		// Error message is expected
+		softAssert.assertTrue(loginPage.isLoginButtonVisible(), "Login button is not visible");
+		//error messsage is expected
 		String actualErrMsg = loginPage.getErrMsgForInvalidLogin();
-		Assert.assertTrue(actualErrMsg.contains(expectedErrMsgForInvalidLogin),
+		softAssert.assertTrue(actualErrMsg.contains(expectedErrMsgForInvalidLogin),
 				"Error message is incorrect. Expected:\s " + expectedErrMsgForInvalidLogin + ", but actual:\s"
 						+ actualErrMsg);
+		// Same page url is expected
+		softAssert.assertEquals(loginPage.getCurrentUrl(), loginPage.getPageUrl(),"Incorrect url. Expected:\s" + loginPage.getPageUrl() + ",but actual:\s " + loginPage.getCurrentUrl());
+		softAssert.assertAll();
 	}
 }
