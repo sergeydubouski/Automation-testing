@@ -44,7 +44,7 @@ public class TestUtil extends BaseTest {
 				+ new SimpleDateFormat("HH-mm-ss.SSS aa").format(new Date())+" "+fileName+".png";
 
 		// Convert web driver object to TakeScreenshot
-		TakesScreenshot scrShot = ((TakesScreenshot) DriverContainer.getDriver());
+		TakesScreenshot scrShot = ((TakesScreenshot) BrowserFactory.getThreadDriver());
 		// Call getScreenshotAs method to create image file
 		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
 		// Move image file to new destination

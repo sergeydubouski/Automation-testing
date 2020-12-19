@@ -24,6 +24,8 @@ import org.testng.annotations.Parameters;
 
 @Listeners({ com.herokuapp.theinternet.base.TestListener.class })
 public class BaseTest {
+	
+	
 
 	protected String browser;
 	protected Logger log;
@@ -34,19 +36,17 @@ public class BaseTest {
 
 	@Parameters({ "browser" })
 	@BeforeMethod(alwaysRun = true)
-	protected void setUpDriver(Method method, @Optional("chrome") String browser, ITestContext ctx) {		
+	protected void setUpDriver(Method method, @Optional("chrome") String browser, ITestContext ctx) {
 		
-
-		this.browser = browser;
-
-		String name = ctx.getCurrentXmlTest().getName();
-		this.log = LogManager.getLogger(name);
-
-		this.driver = new BrowserFactory(this.browser, this.log).createDriver();
-
+		String name = ctx.getCurrentXmlTest().getName();		
 		this.testSuiteName = ctx.getSuite().getName();
 		this.testName = name;
 		this.testMethodName = method.getName();
+		
+		this.log = LogManager.getLogger(name);
+		this.browser = browser;
+		
+		this.driver = new BrowserFactory(this.browser, this.log).createDriver();		
 	}
 
 	@AfterMethod(alwaysRun = true)

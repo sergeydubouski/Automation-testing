@@ -4,21 +4,13 @@
 	thread-count="4">
 	<test name="PositiveLoginPageTest-CH">
 		<parameter name="browser" value="chrome" />
-		<parameter name="username" value="tomsmith" />
-		<parameter name="password" value="SuperSecretPassword!" />
-		<parameter name="expectedSuccessLoginMsg"
-			value="You logged into a secure area!" />
 		<classes>
 			<class
 				name="com.heroku.theinternet.loginpagetests.PositiveLoginPageTest" />
 		</classes>
 	</test>
 	<test name="PositiveLoginPageTest-FF">
-		<parameter name="browser" value="firefox" />
-		<parameter name="username" value="tomsmith" />
-		<parameter name="password" value="SuperSecretPassword!" />
-		<parameter name="expectedSuccessLoginMsg"
-			value="You logged into a secure area!" />
+		<parameter name="browser" value="firefox" />		
 		<classes>
 			<class
 				name="com.heroku.theinternet.loginpagetests.PositiveLoginPageTest" />
@@ -36,6 +28,48 @@
 		<classes>
 			<class
 				name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest" />
+		</classes>
+	</test>
+		<test name="DragAndDropPageTestSuite-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
+		</classes>
+	</test>
+	<test name="DragAndDropPageTestSuite-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
+		</classes>
+	</test>
+	<test name="UploadFilePageTestSuite-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinterne.uploadfilepagetests.UploadFilePageTest" />
+		</classes>
+	</test>
+	<test name="UploadFilePageTestSuite-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinterne.uploadfilepagetests.UploadFilePageTest" />
+		</classes>
+	</test>
+	<test name="IFramesPageTestSuite-CH">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.iframetests.IFramesPageTest" />
+		</classes>
+	</test>
+	<test name="IFramesPageTestSuite-FF">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="com.heroku.theinternet.iframetests.IFramesPageTest" />
 		</classes>
 	</test>
 </suite>
