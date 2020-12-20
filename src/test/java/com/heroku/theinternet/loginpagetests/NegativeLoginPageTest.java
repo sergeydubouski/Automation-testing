@@ -53,11 +53,11 @@ public class NegativeLoginPageTest extends TestUtil {
 		// error messsage is expected
 		String actualErrMsg = loginPage.getErrMsgForInvalidLogin();
 		softAssert.assertTrue(actualErrMsg.contains(expectedErrMsgForInvalidLogin),
-				"Error message is incorrect. Expected:\s " + expectedErrMsgForInvalidLogin + ", but actual:\s"
+				"Error message is incorrect. Expected: " + expectedErrMsgForInvalidLogin + ", but actual: "
 						+ actualErrMsg);
 		// Same page url is expected
 		softAssert.assertEquals(loginPage.getCurrentUrl(), loginPage.getPageUrl(),
-				"Incorrect url. Expected:\s" + loginPage.getPageUrl() + ",but actual:\s " + loginPage.getCurrentUrl());
+				"Incorrect url. Expected: " + loginPage.getPageUrl() + ",but actual: " + loginPage.getCurrentUrl());
 		//Login button is visible
 		softAssert.assertTrue(loginPage.isLoginButtonVisible(), "Login button is not visible");
 		softAssert.assertAll();

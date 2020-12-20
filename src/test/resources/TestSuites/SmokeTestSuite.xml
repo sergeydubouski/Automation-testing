@@ -30,42 +30,42 @@
 				name="com.heroku.theinternet.checkboxpagetests.CheckboxesPageTest" />
 		</classes>
 	</test>
-	<test name="DragAndDropPageTestSuite-CH">
+	<test name="DragAndDropPageTest-CH">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
 				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
 		</classes>
 	</test>
-	<test name="DragAndDropPageTestSuite-FF">
+	<test name="DragAndDropPageTest-FF">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class
 				name="com.heroku.theinternet.draganddroppagetests.DragAndDropPageTest" />
 		</classes>
 	</test>
-	<test name="UploadFilePageTestSuite-CH">
+	<test name="UploadFilePageTest-CH">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
 				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
 		</classes>
 	</test>
-	<test name="UploadFilePageTestSuite-FF">
+	<test name="UploadFilePageTest-FF">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class
 				name="com.heroku.theinternet.uploadfilepagetests.UploadFilePageTest" />
 		</classes>
 	</test>
-	<test name="IFramesPageTestSuite-CH">
+	<test name="IFramesPageTest-CH">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
 				name="com.heroku.theinternet.iframepagetests.IFramesPageTest" />
 		</classes>
 	</test>
-	<test name="IFramesPageTestSuite-FF">
+	<test name="IFramesPageTest-FF">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class

@@ -27,7 +27,7 @@ public class IFramePage extends BasePageObject {
 		this.log.info("Switched to iframe.");
 		this.switchToIFrame(iFrameId);
 		String editorText=this.find(this.iFrameEditorWindow).getText();
-		this.log.info("The editor window text:\s"+editorText);
+		this.log.info("The editor window text: "+editorText);
 		return editorText;
 		
 	}

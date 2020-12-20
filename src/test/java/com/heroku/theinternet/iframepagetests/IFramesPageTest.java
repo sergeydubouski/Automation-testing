@@ -34,7 +34,7 @@ public class IFramesPageTest extends TestUtil {
 
 		// verify that a new page contains expected content in the editor window
 		Assert.assertTrue(editorContent.equals("Your content goes here."),
-				"Editor content is not expected. It's:\s" + editorContent);
+				"Editor content is not expected. It's: " + editorContent);
 
 	}
 

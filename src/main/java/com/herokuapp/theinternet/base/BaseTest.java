@@ -51,7 +51,7 @@ public class BaseTest {
 
 	@AfterMethod(alwaysRun = true)
 	protected void tearDown() {
-		this.log.info("Close browser\s" + this.browser + ".");
+		this.log.info("Close browser " + this.browser + ".");
 		this.driver.quit();
 	}
 

@@ -7,6 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<aspectj.version>1.9.6</aspectj.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -15,7 +16,6 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -23,7 +23,6 @@
 			<version>7.3.0</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
-
 		<!--https://logging.apache.org/log4j/2.x/maven-artifacts.html -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -77,6 +76,9 @@
 				<!-- <version>2.20</version> -->
 				<version>3.0.0-M5</version>
 				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>src/test/resources/TestSuites/SmokeTestSuite.xml</suiteXmlFile>
+					</suiteXmlFiles>
 					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>

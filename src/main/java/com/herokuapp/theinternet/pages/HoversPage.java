@@ -49,7 +49,7 @@ public class HoversPage extends BasePageObject {
 	public String getTextOfAvatar(int avatarIndex) {
 		int avatarArrIndex=avatarIndex-1;
 		WebElement avatar = this.hoverOverAvatar(avatarArrIndex);
-		this.log.info("Text of avatar [" + avatarIndex + "] is\s"
+		this.log.info("Text of avatar [" + avatarIndex + "] is "
 				+ avatar.findElement(this.avatarTextLocator).getAttribute("textContent") + ".");
 		return avatar.findElement(this.avatarTextLocator).getAttribute("textContent");
 	}

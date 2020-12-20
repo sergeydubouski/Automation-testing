@@ -42,7 +42,7 @@ public class PositiveLoginPageTest extends TestUtil {
 
 		// Success login message is correct
 		Assert.assertTrue(secureAreaPage.getSuccessLoginMsg().contains(expectedSuccessLoginMsg),
-				"Success login message is incorrect. Expected:\s" + expectedSuccessLoginMsg + ", but actual is\s"
+				"Success login message is incorrect. Expected: " + expectedSuccessLoginMsg + ", but actual is "
 						+ secureAreaPage.getSuccessLoginMsg());
 	}
 }

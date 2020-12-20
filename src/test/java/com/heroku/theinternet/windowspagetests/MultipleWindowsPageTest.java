@@ -35,8 +35,8 @@ public class MultipleWindowsPageTest extends TestUtil {
 		//switch to a window by its title and verify the title
 		
 		  Assert.assertTrue(currentTitle.contains(title.toLowerCase()),
-		  "Title of the page doesn't match the expected title. Expected:\s"+title+
-		  ", but actual:\s"+currentTitle);
+		  "Title of the page doesn't match the expected title. Expected: "+title+
+		  ", but actual: "+currentTitle);
 		 
 				
 		

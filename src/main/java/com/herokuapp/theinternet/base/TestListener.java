@@ -43,29 +43,29 @@ public class TestListener implements ITestListener {
 	}
 	@Override
 	public void onTestStart(ITestResult result) {
-		this.logListener.info("[TEST METHOD\s" + result.getName() + " STARTED]");
+		this.logListener.info("[TEST METHOD " + result.getName() + " STARTED]");
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		this.logListener.info("[TEST METHOD\s" + result.getName() + " PASSED]");
+		this.logListener.info("[TEST METHOD " + result.getName() + " PASSED]");
 		this.saveScreenshot();
-		this.saveTextLog(result.getMethod().getMethodName()+"\sPASSED with the following parameters:\n"+Arrays.toString(result.getParameters()));
+		this.saveTextLog(result.getMethod().getMethodName()+" PASSED with the following parameters:\n"+Arrays.toString(result.getParameters()));
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		this.logListener.info("[TEST METHOD " + result.getName() + "\sFAILED]");
+		this.logListener.info("[TEST METHOD " + result.getName() + " FAILED]");
 		this.saveScreenshot();
-		this.saveTextLog(result.getMethod().getMethodName()+"\sFAILED with the following parameters:\n"+Arrays.toString(result.getParameters()));
+		this.saveTextLog(result.getMethod().getMethodName()+" FAILED with the following parameters:\n"+Arrays.toString(result.getParameters()));
 		this.saveTextLog(result.getThrowable().getMessage());
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		this.logListener.info("[TEST METHOD " + result.getName() + "\sSKIPPED]");
+		this.logListener.info("[TEST METHOD " + result.getName() + " SKIPPED]");
 		this.saveScreenshot();
-		this.saveTextLog(result.getMethod().getMethodName()+"\sSKIPPED with the following parameters:\n"+Arrays.toString(result.getParameters()));
+		this.saveTextLog(result.getMethod().getMethodName()+" SKIPPED with the following parameters:\n"+Arrays.toString(result.getParameters()));
 	}
 
 	@Override
@@ -76,9 +76,9 @@ public class TestListener implements ITestListener {
 
 	@Override
 	public void onTestFailedWithTimeout(ITestResult result) {
-		this.logListener.info("[TEST METHOD " + result.getName() + "\sFAILED WITH TIMEOUT]");
+		this.logListener.info("[TEST METHOD " + result.getName() + " FAILED WITH TIMEOUT]");
 		this.saveScreenshot();
-		this.saveTextLog(result.getMethod().getMethodName()+"\sFAILED WITH TIMEOUT");
+		this.saveTextLog(result.getMethod().getMethodName()+" FAILED WITH TIMEOUT");
 	}
 
 	@Override

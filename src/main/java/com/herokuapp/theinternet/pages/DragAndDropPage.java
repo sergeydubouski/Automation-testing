@@ -28,7 +28,7 @@ public class DragAndDropPage extends BasePageObject {
 
 	/** open the page */
 	public void openDragAndDropPage() {
-		this.log.info("Opening page\s" + this.url);
+		this.log.info("Opening page " + this.url);
 		this.open(url);
 	}
 

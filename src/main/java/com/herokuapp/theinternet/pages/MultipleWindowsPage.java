@@ -23,7 +23,7 @@ public class MultipleWindowsPage extends BasePageObject {
 	public String getTitleOfNewWindow(String title) {		
 		this.click(this.clickHereButtonLocator);
 		this.switchToWindow(title);
-		this.log.info("Current window title:\s"+this.driver.getTitle());
+		this.log.info("Current window title: "+this.driver.getTitle());
 		return this.driver.getTitle().toLowerCase();
 	}
 }

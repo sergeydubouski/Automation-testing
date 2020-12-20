@@ -38,7 +38,7 @@ public class BrowserFactory {
 			BrowserFactory.threadDriver.set(new ChromeDriver());
 			break;
 		}
-		this.log.info("Created browser\s"+this.browser+".");
+		this.log.info("Created browser "+this.browser+".");
 		return BrowserFactory.getThreadDriver();		
 	}
 	

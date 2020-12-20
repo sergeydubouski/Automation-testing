@@ -24,7 +24,7 @@ public class KeyPressesPage extends BasePageObject {
 	
 	/**press key using keyboard*/
 	public void pressKey(Keys keys) {
-		this.log.info("Pressing a key\s"+keys.name());
+		this.log.info("Pressing a key "+keys.name());
 		Actions action=new Actions(this.driver);
 		action.sendKeys(keys).build().perform();
 	}
