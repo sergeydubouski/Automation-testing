@@ -3,6 +3,7 @@ package com.herokuapp.theinternet.base;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
@@ -49,14 +50,14 @@ public class TestListener implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		this.logListener.info("[TEST METHOD\s" + result.getName() + " PASSED]");
 		this.saveScreenshot();
-		this.saveTextLog(result.getMethod().getMethodName()+"\sPASSED");
+		this.saveTextLog(result.getMethod().getMethodName()+"\sPASSED with the following parameters:\n"+Arrays.toString(result.getParameters()));
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		this.logListener.info("[TEST METHOD " + result.getName() + "\sFAILED]");
 		this.saveScreenshot();
-		this.saveTextLog(result.getMethod().getMethodName()+"\sFAILED");
+		this.saveTextLog(result.getMethod().getMethodName()+"\sFAILED with the following parameters:\n"+Arrays.toString(result.getParameters()));
 		this.saveTextLog(result.getThrowable().getMessage());
 	}
 
@@ -64,7 +65,7 @@ public class TestListener implements ITestListener {
 	public void onTestSkipped(ITestResult result) {
 		this.logListener.info("[TEST METHOD " + result.getName() + "\sSKIPPED]");
 		this.saveScreenshot();
-		this.saveTextLog(result.getMethod().getMethodName()+"\sSKIPPED");
+		this.saveTextLog(result.getMethod().getMethodName()+"\sSKIPPED with the following parameters:\n"+Arrays.toString(result.getParameters()));
 	}
 
 	@Override

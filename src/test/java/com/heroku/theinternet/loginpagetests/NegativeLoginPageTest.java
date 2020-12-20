@@ -25,42 +25,41 @@ import com.herokuapp.theinternet.pages.WelcomePage;
 public class NegativeLoginPageTest extends TestUtil {
 
 	@Test(priority = 1, dataProvider = "csvDataReader", dataProviderClass = CsvDataProvider.class)
-	void negativeLogInTest(Map<String,String>testData) {
-		
-		String no=testData.get("no");
-		String description=testData.get("description");
-		String username=testData.get("username");
-		String password=testData.get("password");
-		String expectedErrMsgForInvalidLogin=testData.get("expectedErrMsg");
-		
-		
-		this.log.info("Starting negative login page test ["+no+"]["+description+"]");
+	void negativeLogInTest(Map<String, String> testData) {
+
+		String no = testData.get("no");
+		String description = testData.get("description");
+		String username = testData.get("username");
+		String password = testData.get("password");
+		String expectedErrMsgForInvalidLogin = testData.get("expectedErrMsg");
+
+		this.log.info("Starting negative login page test [" + no + "][" + description + "]");
 
 		// Open welcome page
 		WelcomePage welcomePage = new WelcomePage(this.driver, this.log);
 		welcomePage.openWelcomePage();
-	//	this.takeScreenshot("WelcomePage opened");
+		// this.takeScreenshot("WelcomePage opened");
 
 		// Click form Authentication link
 		LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
-	//	this.takeScreenshot("LoginPage opened");
+		// this.takeScreenshot("LoginPage opened");
 
 		// Execute log in with incorrect credentials
 		loginPage.negativeLogin(username, password);
-	//	this.takeScreenshot("LoginPage with invalid login message");
+		// this.takeScreenshot("LoginPage with invalid login message");
 
 		// Verification
-		
-		SoftAssert softAssert=new SoftAssert();
-		// Login button is visible
-		softAssert.assertTrue(loginPage.isLoginButtonVisible(), "Login button is not visible");
-		//error messsage is expected
+		SoftAssert softAssert = new SoftAssert();
+		// error messsage is expected
 		String actualErrMsg = loginPage.getErrMsgForInvalidLogin();
 		softAssert.assertTrue(actualErrMsg.contains(expectedErrMsgForInvalidLogin),
 				"Error message is incorrect. Expected:\s " + expectedErrMsgForInvalidLogin + ", but actual:\s"
 						+ actualErrMsg);
 		// Same page url is expected
-		softAssert.assertEquals(loginPage.getCurrentUrl(), loginPage.getPageUrl(),"Incorrect url. Expected:\s" + loginPage.getPageUrl() + ",but actual:\s " + loginPage.getCurrentUrl());
+		softAssert.assertEquals(loginPage.getCurrentUrl(), loginPage.getPageUrl(),
+				"Incorrect url. Expected:\s" + loginPage.getPageUrl() + ",but actual:\s " + loginPage.getCurrentUrl());
+		//Login button is visible
+		softAssert.assertTrue(loginPage.isLoginButtonVisible(), "Login button is not visible");
 		softAssert.assertAll();
 	}
 }

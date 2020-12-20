@@ -3,6 +3,8 @@ package com.herokuapp.theinternet.pages;
 import org.apache.logging.log4j.Logger;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -42,8 +44,14 @@ public class LoginPage extends BasePageObject {
 	
 	/**Verification if login button is displayed*/
 	public boolean isLoginButtonVisible() {
+		try {
 		this.waitForVisibility(this.loginButtonLocator, 5);
 		return this.find(this.loginButtonLocator).isDisplayed();
+		} catch(TimeoutException te){
+			return false;
+		}catch(NoSuchElementException ne) {
+			return false;
+		}
 	}
 	
 	/**Get page url*/
